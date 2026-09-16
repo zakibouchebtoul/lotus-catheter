@@ -3153,7 +3153,7 @@ figcaption {
 }
 
 .nav-link {
-    background-image: url(/assets/Images/dot.svg);
+    background-image: url(../assets/Images/dot.svg);
     background-position: 0%;
     background-repeat: no-repeat;
     background-size: 0 0;
@@ -3736,7 +3736,7 @@ figcaption {
 }
 
 .hero-section {
-    background-image: url(/assets/Images/frosted_silicone_hero_background.jpg);
+    background-image: url(../assets/Images/frosted_silicone_hero_background.jpg);
     padding-top: 16rem;
     padding-bottom: 8.75rem;
     position: relative
@@ -3802,7 +3802,7 @@ figcaption {
     grid-column-gap: var(--gap--gap-3);
     grid-row-gap: var(--gap--gap-3);
     background-color: var(--color--black);
-    background-image: linear-gradient(180deg, var(--color--transparent), #101b13a8 100%, white), url(/assets/Images/iridescent_oil_bubbles.jpg);
+    background-image: linear-gradient(180deg, var(--color--transparent), #101b13a8 100%, white), url(../assets/Images/iridescent_oil_bubbles.jpg);
     background-position: 0 0, 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -6631,7 +6631,7 @@ figcaption {
 .solution-item-one {
     border-radius: var(--border-radius--lg);
     background-color: var(--color--black);
-    background-image: linear-gradient(#17101bb3, #18101b00), url(/assets/Images/oil_bubble_macro.jpg);
+    background-image: linear-gradient(#17101bb3, #18101b00), url(../assets/Images/oil_bubble_macro.jpg);
     background-position: 0 0, 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -8594,7 +8594,7 @@ figcaption {
     }
 
     .hero-item-one {
-        background-image: linear-gradient(180deg, var(--color--transparent), #101b13 100%, white), url(/assets/Images/iridescent_oil_bubbles.jpg);
+        background-image: linear-gradient(180deg, var(--color--transparent), #101b13 100%, white), url(../assets/Images/iridescent_oil_bubbles.jpg);
         background-position: 0 0, 50%;
         background-repeat: repeat, no-repeat;
         background-size: auto, cover;
