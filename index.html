@@ -3455,5 +3455,34 @@
 				}
 			})();
 		</script>
+		<script>
+			// Mobile nav toggle. The stylesheet already defines
+			// [data-nav-menu-open] { display: block !important; ... } —
+			// that's Webflow's own convention, but the Webflow runtime that
+			// normally sets/clears it isn't loaded on this page, so the
+			// hamburger button did nothing. Do it ourselves instead.
+			(function () {
+				var navBtn = document.querySelector(".menu-button.w-nav-button");
+				var navMenu = document.querySelector(".nav-menu.w-nav-menu");
+				if (!navBtn || !navMenu) return;
+
+				function closeMenu() {
+					navMenu.removeAttribute("data-nav-menu-open");
+					navBtn.classList.remove("w--open");
+				}
+				function toggleMenu() {
+					if (navMenu.hasAttribute("data-nav-menu-open")) {
+						closeMenu();
+					} else {
+						navMenu.setAttribute("data-nav-menu-open", "");
+						navBtn.classList.add("w--open");
+					}
+				}
+				navBtn.addEventListener("click", toggleMenu);
+				navMenu.querySelectorAll("a").forEach(function (link) {
+					link.addEventListener("click", closeMenu);
+				});
+			})();
+		</script>
 	</body>
 </html>
