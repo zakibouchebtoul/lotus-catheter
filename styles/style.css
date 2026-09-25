@@ -2079,7 +2079,7 @@ textarea.w-input, textarea.w-select {
     --color--gray-3: #1d1f1e;
     --_typography---body--body-xs: .875rem;
     --color--gray-7-16: #f3f6f429;
-    --color--gray-1: #0e1321;
+    --color--gray-1: #121a32;
     --color--secondary-2: #f9fffb;
     --color--gray-5: #9b93a3;
     --color--secondary-1: #bddff7;
@@ -3933,7 +3933,7 @@ figcaption {
     font-size: var(--_typography---body--body-xs);
     flex-flow: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 1.25rem;
     display: flex
 }
