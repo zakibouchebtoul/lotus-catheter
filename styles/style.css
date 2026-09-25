@@ -2079,11 +2079,11 @@ textarea.w-input, textarea.w-select {
     --color--gray-3: #1d1f1e;
     --_typography---body--body-xs: .875rem;
     --color--gray-7-16: #f3f6f429;
-    --color--gray-1: #121a32;
+    --color--gray-1: #0c111e;
     --color--secondary-2: #f9fffb;
     --color--gray-5: #9b93a3;
     --color--secondary-1: #bddff7;
-    --color--black: #051521;
+    --color--black: #0c111e;
     --border-radius--md: .625rem;
     --border-radius--button: .625rem;
     --color--primary-2: #ffffffe7;
@@ -3799,16 +3799,22 @@ figcaption {
     overflow: hidden
 }
 
+.grid-hero-right > .hero-item-one:only-child {
+    grid-column: 1 / -1
+}
+
 .hero-item-one {
     grid-column-gap: var(--gap--gap-3);
     grid-row-gap: var(--gap--gap-3);
+            background-image: linear-gradient(180deg, var(--color--transparent), #0c111e 100%, white), url(../assets/Images/iridescent_oil_bubbles.jpg);
+
     background-color: var(--color--black);
     background-position: 0 0, 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     flex-flow: column;
     justify-content: flex-end;
-    padding: 1.25rem;
+    padding: 2.25rem;
     display: flex
 }
 
@@ -7876,7 +7882,7 @@ figcaption {
     }
 
     .hero-item-one, .hero-item-two {
-        padding: 1.875rem
+        padding: 2.5rem
     }
 
     .grid-about {
