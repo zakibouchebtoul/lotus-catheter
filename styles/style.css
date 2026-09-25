@@ -2070,7 +2070,7 @@ textarea.w-input, textarea.w-select {
     --_typography---h6--line-height-2: 1.1em;
     --_typography---h6--font-weight-400: 400;
     --border-radius--sm: .313rem;
-    --color--primary-1: #6856DF;
+    --color--primary-1: #1d75b2;
     --color--gray-7: #f5f3f6;
     --_typography---body--body-lg: 1.25rem;
     --_layout---container--container-max-width: 1520px;
@@ -2079,14 +2079,14 @@ textarea.w-input, textarea.w-select {
     --color--gray-3: #1d1f1e;
     --_typography---body--body-xs: .875rem;
     --color--gray-7-16: #f3f6f429;
-    --color--gray-1: #2a1e31;
+    --color--gray-1: #0e1321;
     --color--secondary-2: #f9fffb;
     --color--gray-5: #9b93a3;
-    --color--secondary-1: #efc2f7;
-    --color--black: #1c0b20;
+    --color--secondary-1: #c2c4f7;
+    --color--black: #051521;
     --border-radius--md: .625rem;
     --border-radius--button: .625rem;
-    --color--primary-2: #cdb3fb;
+    --color--primary-2: #ffffffe7;
     --_typography---button-text\<deleted\|variable-7a5955c2-8963-e0af-44b1-03c336cb52d1\>: 1.125rem;
     --_layout---container--inner-container-max-width: 800px;
     --_layout---container--inner-container-gutter: 1.875rem;
@@ -2288,7 +2288,8 @@ body {
     background-color: var(--_typography---body--bg-color);
     font-family: var(--_typography---font-family--body);
     color: var(--_color---body-text);
-    font-size: var(--_typography---body--body-sm);
+        font-size: var(--_typography---body--body-sm);
+
     line-height: var(--_typography---body--line-height-2);
     font-weight: var(--_typography---body--font-weight-400)
 }
@@ -3225,8 +3226,8 @@ figcaption {
 
 .navbar {
     background-color: var(--color--transparent);
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem
 }
 
 .utility-page-content {
@@ -3508,7 +3509,7 @@ figcaption {
 
 .logo {
     width: auto;
-    height: 30px
+    height: 50px
 }
 
 .dropdown {
@@ -3736,10 +3737,10 @@ figcaption {
 }
 
 .hero-section {
-    background-image: url(../assets/Images/frosted_silicone_hero_background.jpg);
+    background-image: linear-gradient(180deg, var(--color--transparent), var(--color--black));
     padding-top: 16rem;
     padding-bottom: 8.75rem;
-    position: relative
+    position: relative;
 }
 
 .grid-hero {
@@ -3759,7 +3760,7 @@ figcaption {
 }
 
 .hero-title {
-    color: #1d1f1e;
+    color: #FFF;
     line-height: var(--_typography---h1--line-height-1);
     margin-bottom: 2.5rem;
 }
@@ -3802,7 +3803,6 @@ figcaption {
     grid-column-gap: var(--gap--gap-3);
     grid-row-gap: var(--gap--gap-3);
     background-color: var(--color--black);
-    background-image: linear-gradient(180deg, var(--color--transparent), #101b13a8 100%, white), url(../assets/Images/iridescent_oil_bubbles.jpg);
     background-position: 0 0, 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -4131,9 +4131,7 @@ figcaption {
     grid-column-gap: var(--gap--gap-6);
     grid-row-gap: var(--gap--gap-6);
     grid-template-rows: auto;
-    grid-template-columns: 1fr .5fr;
-    grid-auto-columns: 1fr;
-    display: grid
+  
 }
 
 .our-mission-description {
@@ -4800,7 +4798,6 @@ figcaption {
 
 .video-overlay {
     border-radius: var(--border-radius--md);
-    background-color: var(--color--black);
     opacity: .3;
     pointer-events: none;
     width: 100%;
