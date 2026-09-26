@@ -962,7 +962,7 @@
 						aria-current="page"
 						class="brand w-nav-brand w--current">
 						<img
-							src="assets/Images/lotuscatheter_FINAL_aligned.png"
+							src="assets/Images/lotuscatheter_FINAL_aligned.webp"
 							loading="lazy"
 							alt="Logo"
 							class="logo" />
@@ -975,18 +975,8 @@
 							<a
 								href="./"
 								aria-current="page"
-								class="nav-link w-nav-link w--current"
+								class="nav-link w-nav-link w--current nav-active"
 								>Home</a
-							>
-							<a
-								href="#comparison"
-								class="nav-link w-nav-link">
-								Clinical research
-							</a>
-							<a
-								href="#inventor"
-								class="nav-link w-nav-link"
-								>The Inventor</a
 							>
 							<a
 								href="#partners"
@@ -1023,185 +1013,358 @@
 			</div>
 		</div>
 		<section
-			class="hero-section"
+			class="lc-hero2"
 			id="component">
+			<style>
+				.lc-hero2 {
+					background: #fff;
+					padding: 6rem 0;
+					overflow: hidden;
+				}
+				.lc-hero2 .lc-h-grid {
+					display: grid;
+					grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 0.6fr);
+					gap: 3rem;
+					align-items: stretch;
+				}
+				.lc-hero2 .lc-h-media {
+					position: relative;
+					border-radius: 20px;
+					overflow: hidden;
+					background: #f3f6fb;
+					min-height: 600px;
+				}
+				.lc-hero2 .lc-h-media img {
+					position: absolute;
+					inset: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: 50% 30%;
+				}
+				.lc-hero2 .lc-h-body {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					gap: 2rem;
+					padding: 0;
+				}
+				.lc-hero2 .lc-h-title {
+					color: #0f1f3d;
+					font-size: clamp(2.6rem, 5vw, 4.6rem);
+					line-height: 1.12;
+					margin: 0 0 1.75rem;
+				}
+				.lc-hero2 .lc-h-title em {
+					font-style: normal;
+					color: #0270cc;
+				}
+				.lc-hero2 .lc-h-text {
+					color: #26324a;
+					font-size: 1rem;
+					line-height: 1.6;
+					max-width: 500px;
+					margin: 0;
+				}
+				.lc-hero2 .lc-h-badge {
+					font-family: var(--_typography---font-family--heading);
+					font-weight: 400;
+					color: #0270cc;
+					font-size: clamp(2.6rem, 4.6vw, 4rem);
+					line-height: 1;
+					letter-spacing: -0.01em;
+				}
+				.lc-hero2 .lc-h-foot {
+					display: flex;
+					flex-direction: column;
+					gap: 1.75rem;
+				}
+				.lc-hero2 .lc-h-items {
+					display: grid;
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+					gap: 1.5rem;
+				}
+				.lc-hero2 .lc-h-item {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 0.9rem;
+					color: #0f1f3d;
+					font-size: 1.05rem;
+					font-weight: 500;
+				}
+				.lc-hero2 .lc-h-icon {
+					display: block;
+					width: 64px;
+					height: 64px;
+					background-color: #0270cc;
+					-webkit-mask: var(--icon-url) center / contain no-repeat;
+					mask: var(--icon-url) center / contain no-repeat;
+				}
+				.lc-hero2 .lc-h-side img {
+					display: block;
+					width: 70%;
+					aspect-ratio: 2 / 3;
+					object-fit: cover;
+					border-radius: 20px;
+				}
+				.lc-hero2 .lc-h-side {
+					align-self: start;
+				}
+				.lc-hero2 .lc-h-media {
+					animation: lc-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+				}
+				.lc-hero2 .lc-h-media img {
+					animation: lc-zoom 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+				}
+				.lc-hero2 .lc-h-side img {
+					animation: lc-rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+					transition:
+						transform 0.5s ease,
+						box-shadow 0.5s ease;
+				}
+				.lc-hero2 .lc-h-media:hover img {
+					transform: scale(1.04);
+					transition: transform 0.8s ease;
+				}
+				.lc-hero2 .lc-h-side:hover img {
+					transform: translateY(-6px);
+					box-shadow: 0 24px 40px -22px rgba(2, 112, 204, 0.55);
+				}
+				@keyframes lc-reveal {
+					from {
+						clip-path: inset(0 0 100% 0 round 20px);
+						opacity: 0;
+					}
+					to {
+						clip-path: inset(0 0 0 0 round 20px);
+						opacity: 1;
+					}
+				}
+				@keyframes lc-zoom {
+					from {
+						transform: scale(1.18);
+					}
+					to {
+						transform: scale(1);
+					}
+				}
+				@keyframes lc-rise {
+					from {
+						opacity: 0;
+						transform: translateY(40px) scale(0.96);
+					}
+					to {
+						opacity: 1;
+						transform: none;
+					}
+				}
+				@media (prefers-reduced-motion: reduce) {
+					.lc-hero2 .lc-h-media,
+					.lc-hero2 .lc-h-media img,
+					.lc-hero2 .lc-h-side img {
+						animation: none;
+					}
+				}
+				.lc-hero2 .lc-w {
+					display: inline-block;
+					white-space: nowrap;
+				}
+				.lc-hero2 .lc-c {
+					display: inline-block;
+					opacity: 0;
+					transform: translateY(0.35em);
+					filter: blur(4px);
+					animation: lc-char 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+					animation-delay: calc(var(--d, 0s) + var(--i) * var(--step, 30ms));
+				}
+				@keyframes lc-char {
+					to {
+						opacity: 1;
+						transform: none;
+						filter: blur(0);
+					}
+				}
+				.lc-hero2 .lc-h-text {
+					animation: lc-fade 1.1s ease 1.3s both;
+				}
+				.lc-hero2 .lc-h-item span:last-child {
+					animation: lc-fade 0.9s ease both;
+				}
+				.lc-hero2 .lc-h-item:nth-child(1) span:last-child {
+					animation-delay: 2.4s;
+				}
+				.lc-hero2 .lc-h-item:nth-child(2) span:last-child {
+					animation-delay: 2.7s;
+				}
+				.lc-hero2 .lc-h-item:nth-child(3) span:last-child {
+					animation-delay: 3s;
+				}
+				@keyframes lc-fade {
+					from {
+						opacity: 0;
+					}
+					to {
+						opacity: 1;
+					}
+				}
+				@media (prefers-reduced-motion: reduce) {
+					.lc-hero2 .lc-h-text,
+					.lc-hero2 .lc-h-item span:last-child {
+						animation: none;
+					}
+				}
+				@media (prefers-reduced-motion: reduce) {
+					.lc-hero2 .lc-c {
+						animation: none;
+						opacity: 1;
+						transform: none;
+						filter: none;
+					}
+				}
+				@media (max-width: 991px) {
+					.lc-hero2 .lc-h-grid {
+						grid-template-columns: 1fr;
+						gap: 2rem;
+					}
+					.lc-hero2 .lc-h-media {
+						min-height: 380px;
+					}
+					.lc-hero2 {
+						padding: 2.5rem 0;
+					}
+					.lc-hero2 .lc-h-side img {
+						aspect-ratio: 16 / 10;
+					}
+				}
+				@media (max-width: 479px) {
+					.lc-hero2 {
+						padding: 1.5rem 0 3rem;
+					}
+					.lc-hero2 .lc-h-items {
+						grid-template-columns: 1fr;
+					}
+					.lc-hero2 .lc-h-item {
+						flex-direction: row;
+						align-items: center;
+					}
+					.lc-hero2 .lc-h-icon {
+						width: 30px;
+						height: 30px;
+					}
+				}
+			</style>
 			<div class="container">
-				<div class="w-layout-grid grid-hero">
-					<div class="hero-left">
-						<h1
-							data-w-id="c249eadf-f505-bb8b-6e6f-17095ff412a6"
-							style="
-								opacity: 1;
-								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-								transform-style: preserve-3d;
-							"
-							class="hero-title">
-							The No Balloon Urinary Catheter
-						</h1>
-						<div
-							data-w-id="4e689e97-c15a-0d10-65c6-24c6fc0085f7"
-							style="
-								opacity: 1;
-								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-								transform-style: preserve-3d;
-							"
-							class="hero-button-inline">
-							<a
-								data-wf--button--variant="button-primary"
-								data-w-id="d102baf6-0bbf-4311-9c79-6b424f8fe8a7"
-								href="#about"
-								class="button-black w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9 w-inline-block">
-								<div
-									class="button-left-icon w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9"></div>
-								<div
-									class="button-hover w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9"
-									style="
-										transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-											rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-										transform-style: preserve-3d;
-									"></div>
-								<div class="button-text">Explore our capability</div>
-							</a>
-						</div>
+				<div class="lc-h-grid">
+					<div class="lc-h-media">
+						<img
+							src="assets/Images/image_20260926_005347-make-same-as-this.webp"
+							alt="Lotus Catheter" />
 					</div>
-					<div
-						id="w-node-bf3c9711-823b-f968-9fad-e3afe0ee1df3-1f421fd7"
-						class="hero-right">
-						<div
-							data-w-id="6b60add7-080c-706a-06bb-cffab6bdb8bc"
-							style="
-								opacity: 1;
-								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-								transform-style: preserve-3d;
-							"
-							class="hero-pre-title">
-							<img
-								src="/assets/Images/hero.svg"
-								loading="lazy"
-								alt="Icon"
-								class="hero-icon" />
-							<p class="no-margin-bottom text-secondary-2" style="font-size:0.9rem">
+					<div class="lc-h-body">
+						<div>
+							<h1 class="lc-h-title">The <em>No Balloon</em> Urinary Catheter</h1>
+							<p class="lc-h-text">
 								The Lotus Catheter is the only urinary catheter with FDA clearance for
 								multiple uses of all the three urinary catheters in the medical field:
-								as a Foley Catheter, as a Malecot Catheter, and as a Straight Catheter
+								as a Foley Catheter, as a Malecot Catheter, and as a Straight Catheter.
 							</p>
 						</div>
-						<div
-							data-w-id="46ecb230-4b90-fbc0-6dd1-86b926154e00"
-							style="
-								opacity: 1;
-								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-								transform-style: preserve-3d;
-							"
-							class="w-layout-grid grid-hero-right">
-							<div class="hero-item-one">
-								<div class="hero-counter">
-									<img
-										src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/69008e3dae4d0c41b1cbd6ca_icon-03.svg"
-										loading="lazy"
-										alt="Icon"
-										class="arrow-icon"
-										style="rotate: 180deg" />
-									<div class="counter-count-wrap">
-										<h2
-											data-target="3"
-											class="counter-count">
-											3
-										</h2>
-										<h2 class="counter-count-number">in 1</h2>
-									</div>
+						<div class="lc-h-foot">
+							<div class="lc-h-badge">3 in 1</div>
+							<div class="mission-divider"></div>
+							<div class="lc-h-items">
+								<div class="lc-h-item">
+									<span
+										class="lc-h-icon"
+										style="
+											--icon-url: url(&quot;assets/Images/cath-foley.svg&quot;);
+										"></span
+									><span>Foley Catheter</span>
 								</div>
-								<p class="hero-counter-description">
-									Simpler, Safer, and Superior in comparison to the Foley Catheter
-								</p>
+								<div class="lc-h-item">
+									<span
+										class="lc-h-icon"
+										style="
+											--icon-url: url(&quot;assets/Images/cath-malecot.svg&quot;);
+										"></span
+									><span>Malecot Catheter</span>
+								</div>
+								<div class="lc-h-item">
+									<span
+										class="lc-h-icon"
+										style="
+											--icon-url: url(&quot;assets/Images/cath-straight.svg&quot;);
+										"></span
+									><span>Straight Catheter</span>
+								</div>
 							</div>
-						
 						</div>
+					</div>
+					<div class="lc-h-side">
+						<img
+							src="assets/Images/image_20260926_011650.webp"
+							alt="Lotus Catheter"
+							loading="lazy" />
 					</div>
 				</div>
 			</div>
-			<div
-				data-poster-url="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-poster-00001.jpg"
-				data-video-urls="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.mp4,https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.webm"
-				data-autoplay="true"
-				data-loop="true"
-				data-wf-ignore="true"
-				fetchpriority="high"
-				class="hero-bg-video w-background-video w-background-video-atom">
-				<video
-					id="ecf8b29e-8c2f-1cd5-e32d-eb62394dade1-video"
-					autoplay=""
-					loop=""
-					style="
-						background-image: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-poster-00001.jpg&quot;);
-					"
-					muted=""
-					playsinline=""
-					data-wf-ignore="true"
-					data-object-fit="cover">
-					<source
-						src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.mp4"
-						data-wf-ignore="true" />
-					<source
-						src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.webm"
-						data-wf-ignore="true" /></video
-				><noscript
-					><style>
-						[data-wf-bgvideo-fallback-img] {
-							display: none;
-						}
-						@media (prefers-reduced-motion: reduce) {
-							[data-wf-bgvideo-fallback-img] {
-								position: absolute;
-								z-index: -100;
-								display: inline-block;
-								height: 100%;
-								width: 100%;
-								object-fit: cover;
-							}
-						}</style
-					><img
-						data-wf-bgvideo-fallback-img="true"
-						src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-poster-00001.jpg"
-						alt=""
-				/></noscript>
-				<div aria-live="polite">
-					<button
-						type="button"
-						data-w-bg-video-control="true"
-						aria-controls="ecf8b29e-8c2f-1cd5-e32d-eb62394dade1-video"
-						class="w-backgroundvideo-backgroundvideoplaypausebutton play-pause-button w-background-video--control">
-						<span class="play-state"
-							><img
-								src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690444958626847d40476e18_icon-22.svg"
-								loading="lazy"
-								fetchpriority="High"
-								alt="Pause video"
-								class="play-image" /></span
-						><span
-							hidden=""
-							class="pause-state"
-							><img
-								loading="lazy"
-								fetchpriority="High"
-								alt="Play video"
-								src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/69033410a92da385496a6282_icon-14.svg"
-								class="pause-image"
-						/></span>
-					</button>
-				</div>
-			</div>
+			<script>
+				(function () {
+					var root = document.querySelector(".lc-hero2");
+					if (!root) return;
+					var targets = [
+						[".lc-h-title", 0.2, 34],
+						[".lc-h-badge", 1.4, 70],
+					];
+					function split(el, delay, step) {
+						var n = 0;
+						el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
+						(function walk(node) {
+							Array.prototype.slice.call(node.childNodes).forEach(function (c) {
+								if (c.nodeType === 3) {
+									var frag = document.createDocumentFragment();
+									c.textContent.split(/(\s+)/).forEach(function (part) {
+										if (!part) return;
+										if (/^\s+$/.test(part)) {
+											frag.appendChild(document.createTextNode(" "));
+											return;
+										}
+										var w = document.createElement("span");
+										w.className = "lc-w";
+										w.setAttribute("aria-hidden", "true");
+										part.split("").forEach(function (ch) {
+											var sp = document.createElement("span");
+											sp.className = "lc-c";
+											sp.style.setProperty("--i", n++);
+											sp.textContent = ch;
+											w.appendChild(sp);
+										});
+										frag.appendChild(w);
+									});
+									node.replaceChild(frag, c);
+								} else if (c.nodeType === 1) {
+									walk(c);
+								}
+							});
+						})(el);
+						el.style.setProperty("--d", delay + "s");
+						el.style.setProperty("--step", step + "ms");
+					}
+					targets.forEach(function (t) {
+						root.querySelectorAll(t[0]).forEach(function (el) {
+							split(el, t[1], t[2]);
+						});
+					});
+				})();
+			</script>
 		</section>
 		<section class="our-mission-section section-spacing">
 			<div class="container-medium">
 				<h3 class="our-mission-content">Our Story / Historical Review</h3>
 				<div class="w-layout-grid grid-our-mission">
 					<img
-						src="assets/Images/liquid_glass_transparent.png"
+						src="assets/Images/liquid_glass_transparent.webp"
 						loading="lazy"
 						alt="Decoration"
 						class="decoration-03" />
@@ -1238,313 +1401,158 @@
 			class="about-section section-spacing"
 			id="about">
 			<div class="container-medium">
-				<div class="section-title text-center">
-					<h2
-						data-w-id="8a40a33b-f2a1-b846-18c1-422d2d4ef2d8"
-						style="opacity: 0"
-						class="about-title">
-						The balloon has had its day
-					</h2>
-					<p
-						data-w-id="c9409ea4-dd38-ad32-70f7-55e319e3f7c4"
-						style="opacity: 0"
-						class="about-description">
-						The basic Foley design has barely moved since 1933. Its inflatable-balloon
-						anchor, tied to urethral trauma, retained urine and patient discomfort,
-						went largely unquestioned for decades. That changes with this catheter.
-						<br /><br />Lotus offers a genuinely different way to hold a catheter in
-						place: self-opening wings take the position of the inflatable balloon in
-						an indwelling device made for current urological practice. It is cleared
-						through FDA 510(k) (K191512) and intended to improve patient outcomes
-						while lowering the overall cost of care.
-					</p>
-				</div>
-				<div class="w-layout-grid grid-about">
-					<div
-						data-w-id="aa288c5c-4bb2-e688-ff18-64fa5ba1024f"
-						style="opacity: 0"
-						class="about-image-wrap">
-						<video
-							class="about-image"
-							src="assets/Videos/lotus-mechanism-demo.mp4"
-							poster="assets/Videos/lotus-mechanism-demo-poster.jpg"
-							autoplay
-							loop
-							muted
-							playsinline
-							webkit-playsinline="true"
-							style="width: 100%; height: 100%; object-fit: cover"></video>
+				<div class="lc-timeline">
+					<style>
+						.lc-timeline {
+							margin: 0 auto 2.5rem;
+							max-width: 980px;
+						}
+						.lc-timeline .lc-tl-title {
+							text-align: center;
+							margin: 0 0 3rem;
+						}
+						.lc-timeline .mission-divider:first-of-type {
+							margin-top: 0;
+						}
+						.lc-tl-row {
+							display: grid;
+							grid-template-columns: minmax(180px, 0.34fr) 1fr;
+							gap: 2rem;
+							padding: 1.6rem 0;
+							align-items: baseline;
+						}
+						.lc-tl-date {
+							font-family: var(--_typography---font-family--heading);
+							color: #0270cc;
+							font-size: 1.5rem;
+							line-height: 1.25;
+						}
+						.lc-tl-text {
+							margin: 0;
+							color: var(--color--gray-3, #1d1f1e);
+							font-size: 1.05rem;
+							line-height: 1.65;
+						}
+						@media (max-width: 767px) {
+							.lc-tl-row {
+								grid-template-columns: 1fr;
+								gap: 0.4rem;
+								padding: 1.25rem 0;
+							}
+							.lc-timeline {
+								margin-bottom: 1.5rem;
+							}
+						}
+					</style>
+					<div class="section-title text-center">
+						<h2 class="about-title lc-tl-title">Milestones</h2>
 					</div>
-					<div
-						id="w-node-ef30faed-fdcc-7d59-0ea1-9bb79465185e-1f421fd7"
-						data-w-id="ef30faed-fdcc-7d59-0ea1-9bb79465185e"
-						style="opacity: 0"
-						class="about-center-item">
-						<div class="grid-about-item">
-							<div class="about-item">
-								<img
-									src="assets/Images/fda.svg"
-									loading="lazy"
-									alt="Icon"
-									class="about-icon" />
-								<div>FDA 510(k) clearance</div>
-							</div>
-							<div class="about-item">
-								<img
-									src="assets/Images/prize.svg"
-									loading="lazy"
-									alt="Icon"
-									class="about-icon" />
-								<div>Patent runs to 2045</div>
-							</div>
-							<div class="about-item">
-								<img
-									src="assets/Images/global.svg"
-									loading="lazy"
-									alt="Icon"
-									class="about-icon" />
-								<div>500K+ units in use worldwide</div>
-							</div>
-						</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">1995</div>
+						<p class="lc-tl-text">
+							Research on inventing a new urinary catheter begins.
+						</p>
 					</div>
-					<div
-						data-w-id="48be2c42-04bf-6015-2cb3-aacdee1d9ac3"
-						style="opacity: 0"
-						class="about-image-wrap">
-						<img
-							src="assets/Images/lotus-wing-mechanism.jpg"
-							loading="lazy"
-							sizes="(max-width: 600px) 100vw, 600px"
-							alt="Lotus Catheter wing retention mechanism — CAD render"
-							class="about-image" />
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">October 29, 1996</div>
+						<p class="lc-tl-text">
+							US Patent 5,569,219 issued. The first Lotus catheter, called the
+							“Collapsible Catheter,” and its first prototype is built.
+						</p>
 					</div>
-				</div>
-				<div
-					data-w-id="9d600cc9-67e0-b325-882b-81fa546c8a67"
-					style="opacity: 0"
-					class="about-list">
-					<div
-						data-wf--list-item--variant="dark"
-						class="list-item">
-						<img
-							src="assets/Images/arrowright.svg"
-							loading="lazy"
-							alt="Icon"
-							class="list-icon" />
-						<div class="list-text">
-							Wings hold it in place: nothing to inflate, no syringe needed.
-						</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">2003</div>
+						<p class="lc-tl-text">
+							The first Lotus Catheter with No Balloon is invented.
+						</p>
 					</div>
-					<div
-						data-wf--list-item--variant="dark"
-						class="list-item">
-						<img
-							src="assets/Images/arrowright.svg"
-							loading="lazy"
-							alt="Icon"
-							class="list-icon" />
-						<div class="list-text">Cleared under FDA 510(k), number K191512.</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">September 4, 2007</div>
+						<p class="lc-tl-text">
+							US Patent 7,264,609 issued. The catheter is called the “No Balloon
+							Catheter.”
+						</p>
 					</div>
-					<div
-						data-wf--list-item--variant="dark"
-						class="list-item">
-						<img
-							src="assets/Images/arrowright.svg"
-							loading="lazy"
-							alt="Icon"
-							class="list-icon" />
-						<div class="list-text">
-							No urinary tract infections in a prospective clinical trial of 50
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">February 7, 2011</div>
+						<p class="lc-tl-text">First FDA clearance (Latex).</p>
+					</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">2016</div>
+						<p class="lc-tl-text">
+							University of South Florida conducts a prospective clinical study on 50
 							patients.
-						</div>
+						</p>
 					</div>
-					<div
-						data-wf--list-item--variant="dark"
-						class="list-item">
-						<img
-							src="assets/Images/arrowright.svg"
-							loading="lazy"
-							alt="Icon"
-							class="list-icon" />
-						<div class="list-text">
-							Average residual urine of just 4.8 mL, so the bladder empties almost
-							fully.
-						</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">September 2016</div>
+						<p class="lc-tl-text">
+							Meeting with Professor Roger Feneley, who endorsed the Lotus Catheter.
+						</p>
 					</div>
-					<div
-						data-wf--list-item--variant="dark"
-						class="list-item">
-						<img
-							src="assets/Images/arrowright.svg"
-							loading="lazy"
-							alt="Icon"
-							class="list-icon" />
-						<div class="list-text">
-							The force needed to dislodge the fully deployed 2-3 wing flower
-							configuration is 2-3 Pound (0.90 kilogram- 1.36 kilogram).
-						</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">2017</div>
+						<p class="lc-tl-text">
+							Plans laid for a multicenter comparative study between the Foley Catheter
+							and the Lotus Catheter. USF study published in the Journal of Urology and
+							Renal Diseases (February 27, 2017).
+						</p>
 					</div>
-					<div
-						data-wf--list-item--variant="dark"
-						class="list-item">
-						<img
-							src="assets/Images/arrowright.svg"
-							loading="lazy"
-							alt="Icon"
-							class="list-icon" />
-						<div class="list-text">Covered by patent until 2045.</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">May 21, 2020</div>
+						<p class="lc-tl-text">
+							FDA clearance for use as a Foley, Malecot, and Straight Catheter.
+						</p>
 					</div>
+					<div class="mission-divider"></div>
+					<div class="lc-tl-row">
+						<div class="lc-tl-date">November 19, 2045</div>
+						<p class="lc-tl-text">
+							International PCT patent protection runs until this date.
+						</p>
+					</div>
+					<div class="mission-divider"></div>
 				</div>
-				<div style="display: flex; justify-content: center; margin-top: 2rem">
-					<a
-						data-wf--button--variant="button-primary"
-						data-w-id="d102baf6-0bbf-4311-9c79-6b424f8fe8a7"
-						href="#partners"
-						style="width: fit-content"
-						class="button-black w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9 w-inline-block">
-						<div
-							class="button-left-icon w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9"></div>
-						<div
-							class="button-hover w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9"></div>
-						<div class="button-text">Explore industry partnerships</div>
-					</a>
-				</div>
+		
 			</div>
 		</section>
-		<section class="graph-section">
-			<div class="container">
-				<div class="section-title graph-title-wrap">
-					<h2
-						data-w-id="830eaef1-ce1e-e4b8-0d13-21a798ef0dd0"
-						style="opacity: 0"
-						class="graph-title">
-						What an ageing design costs us
-					</h2>
-					<div
-						data-w-id="ec875069-cac0-a322-aa41-2289da9758f6"
-						style="opacity: 0"
-						class="graph-description"
-						style="display: flex !important; flex-direction: row !important">
-						<span style="font-size: 30px; color: white">Up to</span>
-						<span
-							data-target="40"
-							class="counter-count"
-							>40</span
-						>
-						<span style="font-size: 30px; color: white">%</span> of infections picked
-						up in hospital <br />
-						Worldwide, catheter-associated urinary tract infections make up as much as
-						40% of hospital-acquired infections, which places CAUTI at the top of
-						every healthcare-associated infection category.
-						<sup
-							><a
-								href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9668204/"
-								target="_blank"
-								rel="noopener"
-								style="font-size: 0.65em"
-								>1</a
-							></sup
-						>
-					</div>
-				</div>
-				<div class="w-layout-grid grid-graph">
-					<div class="graph-counter-items">
-						<div
-							data-w-id="79b3adbf-25f5-a4b6-3989-4943c7226e83"
-							style="opacity: 0"
-							class="graph-counter-item"
-							tabindex="0">
-							<div class="counter-count-wrap">
-								<h2 class="counter-count-number graph-counter">~95%</h2>
-							</div>
-							<div class="graph-counter-title">Traced to catheters</div>
-							<div class="graph-tooltip">
-								<div class="graph-tooltip-row">
-									<a
-										class="graph-tooltip-cite"
-										href="https://www.cdc.gov/infection-control/hcp/cauti/background.html"
-										target="_blank"
-										rel="noopener"
-										>2</a
-									>
-									<span
-										>Per CDC guidance, nearly every healthcare-associated UTI results from
-										instrumenting the urinary tract.</span
-									>
-								</div>
-							</div>
-						</div>
-						<div
-							data-w-id="79b3adbf-25f5-a4b6-3989-4943c7226e83"
-							style="opacity: 0"
-							class="graph-counter-item"
-							tabindex="0">
-							<div class="counter-count-wrap">
-								<h2 class="counter-count-number graph-counter">~ 13,000+</h2>
-							</div>
-							<div class="graph-counter-title">Deaths each year</div>
-							<div class="graph-tooltip">
-								<div class="graph-tooltip-row">
-									<a
-										class="graph-tooltip-cite"
-										href="https://www.cdc.gov/nhsn/pdfs/pscmanual/7psccauticurrent.pdf"
-										target="_blank"
-										rel="noopener"
-										>3</a
-									>
-									<span
-										>The CDC's estimate of yearly deaths tied to healthcare-associated
-										UTIs in the United States alone.</span
-									>
-								</div>
-							</div>
-						</div>
-						<div
-							data-w-id="79b3adbf-25f5-a4b6-3989-4943c7226e83"
-							style="opacity: 0"
-							class="graph-counter-item"
-							tabindex="0">
-							<div class="counter-count-wrap">
-								<h2 class="counter-count-number graph-counter">$ 395M+</h2>
-							</div>
-							<div class="graph-counter-title">Yearly cost</div>
-							<div class="graph-tooltip">
-								<div class="graph-tooltip-row">
-									<a
-										class="graph-tooltip-cite"
-										href="https://www.ahrq.gov/hai/cauti-tools/guides/implguide-pt1.html"
-										target="_blank"
-										rel="noopener"
-										>4</a
-									>
-									<span
-										>AHRQ, the Agency for Healthcare Research &amp; Quality, puts the
-										annual U.S. cost of CAUTIs between $340 million and $450
-										million.</span
-									>
-								</div>
-							</div>
-						</div>
-					</div>
-					<img
-						src="assets/Images/lines.svg"
-						loading="lazy"
-						style="opacity: 0"
-						data-w-id="c18079e0-4f0b-7891-fdce-54c68132b2f1"
-						alt="Decoration"
-						id="w-node-c18079e0-4f0b-7891-fdce-54c68132b2f1-1f421fd7"
-						class="graph-image" />
-				</div>
-			</div>
-		</section>
-		<section class="service-solution-section section-spacing">
-			<div class="container">
+		<section class="service-solution-section section-spacing-bottom" id="service">
+			<div class="container-medium">
+			<style>
+				#service .solution-item-one { background: linear-gradient(160deg, #f5f9fe 0%, #e6f1fb 100%); justify-content: center; }
+				.lc-four-card { padding: 2rem 1.75rem 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; }
+				.lc-four-visual { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; align-items: end; }
+				.lc-fw-fig { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+				.lc-fw-fig svg { width: 100%; max-width: 112px; height: auto; overflow: visible; }
+				.lc-fw-fig figcaption { font-size: 0.85rem; font-weight: 600; color: #0f1f3d; letter-spacing: 0.02em; }
+				.lc-fw-lotus figcaption { color: #0270CC; }
+				.lc-four-intro { margin: 0; color: #0f1f3d; font-size: 1.05rem; line-height: 1.6; }
+				.lc-fw-l, .lc-fw-r, .lc-fw-c { transform-box: fill-box; animation: lc-fw-wing 4.5s ease-in-out infinite; }
+				.lc-fw-l { transform-origin: 100% 50%; }
+				.lc-fw-r { transform-origin: 0% 50%; }
+				.lc-fw-c { transform-origin: 50% 50%; }
+				@keyframes lc-fw-wing { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.55); } }
+				@media (prefers-reduced-motion: reduce) { .lc-fw-l, .lc-fw-r, .lc-fw-c { animation: none; } }
+				.service-solution-section .solution-accordion-description { max-width: 620px; }
+				.service-solution-section .solution-accordion-description strong { color: #0270CC; }
+				#service .section-title { text-align: left; }
+			</style>
+
 				<div class="section-title text-center">
 					<h2
 						data-w-id="ea15eca8-81ba-943e-8db1-7ef9c53238b6"
 						style="opacity: 0"
 						class="no-margin-bottom">
-						What follows a CAUTI
+						The Four Urinary Catheters
 					</h2>
 				</div>
 				<div
@@ -1552,10 +1560,7 @@
 					style="opacity: 0"
 					class="w-layout-grid grid-service">
 					<div class="solution-item-one">
-						<div class="w-layout-grid grid-service-counter">
-							<div class="solution-counter-info"></div>
-							<div class="divider"></div>
-						</div>
+						<div class="lc-four-card"><div class="lc-four-visual"><figure class="lc-fw-fig"><svg viewBox="0 0 100 340" role="img" aria-label="Foley catheter with inflated balloon"><rect x="42" y="34" width="16" height="268" rx="8" fill="#fff" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="52" rx="4" ry="7" fill="#dbeafe" stroke="#0f1f3d" stroke-width="1.8"/><ellipse cx="50" cy="118" rx="32" ry="46" fill="#dfe8f3" fill-opacity="0.82" stroke="#6f809c" stroke-width="2.4"/><path d="M58 250 C74 250 78 236 78 224" fill="none" stroke="#0f1f3d" stroke-width="2.4" stroke-linecap="round"/><rect x="73" y="216" width="10" height="12" rx="3" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2"/><rect x="37" y="300" width="26" height="16" rx="3" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2.4"/><path d="M40 316 L44 334 H56 L60 316" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round"/></svg><figcaption>Foley</figcaption></figure><figure class="lc-fw-fig"><svg viewBox="0 0 100 340" role="img" aria-label="Malecot catheter with a flower of wings"><rect x="42" y="30" width="16" height="272" rx="8" fill="#fff" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M42 62 C6 50 2 100 22 116 C36 124 42 104 42 92 Z" fill="#fff" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M58 62 C94 50 98 100 78 116 C64 124 58 104 58 92 Z" fill="#fff" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M42 88 C20 96 20 136 40 138 C46 138 44 112 42 88 Z" fill="#f3f8fd" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round"/><path d="M58 88 C80 96 80 136 60 138 C54 138 56 112 58 88 Z" fill="#f3f8fd" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round"/><rect x="37" y="300" width="26" height="16" rx="3" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2.4"/><path d="M40 316 L44 334 H56 L60 316" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round"/></svg><figcaption>Malecot</figcaption></figure><figure class="lc-fw-fig"><svg viewBox="0 0 100 340" role="img" aria-label="Straight catheter"><rect x="42" y="30" width="16" height="272" rx="8" fill="#fff" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="58" rx="4" ry="8" fill="#dbeafe" stroke="#0f1f3d" stroke-width="1.8"/><ellipse cx="50" cy="86" rx="4" ry="8" fill="#dbeafe" stroke="#0f1f3d" stroke-width="1.8"/><rect x="37" y="300" width="26" height="16" rx="3" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2.4"/><path d="M40 316 L44 334 H56 L60 316" fill="#e9f1fb" stroke="#0f1f3d" stroke-width="2.4" stroke-linejoin="round"/></svg><figcaption>Straight</figcaption></figure><figure class="lc-fw-fig lc-fw-lotus"><svg viewBox="0 0 100 340" role="img" aria-label="Lotus catheter with soft loop wings and no balloon"><ellipse class="lc-fw-c" cx="50" cy="112" rx="17" ry="46" fill="#e3f0fc" fill-opacity="0.8" stroke="#0270CC" stroke-width="2.2"/><rect x="42" y="46" width="16" height="256" rx="8" fill="#fff" stroke="#0270CC" stroke-width="2.4"/><rect x="45" y="30" width="10" height="24" rx="5" fill="#fff" stroke="#0270CC" stroke-width="2.4"/><path class="lc-fw-l" d="M42 76 C4 56 -2 112 24 126 C38 132 44 108 42 76 Z" fill="#cfe6f9" fill-opacity="0.9" stroke="#0270CC" stroke-width="2.4" stroke-linejoin="round"/><path class="lc-fw-l" d="M38 88 C16 76 12 108 26 116 C34 119 38 106 38 88 Z" fill="#fff" stroke="#0270CC" stroke-width="1.6" stroke-linejoin="round"/><path class="lc-fw-r" d="M58 76 C96 56 102 112 76 126 C62 132 56 108 58 76 Z" fill="#cfe6f9" fill-opacity="0.9" stroke="#0270CC" stroke-width="2.4" stroke-linejoin="round"/><path class="lc-fw-r" d="M62 88 C84 76 88 108 74 116 C66 119 62 106 62 88 Z" fill="#fff" stroke="#0270CC" stroke-width="1.6" stroke-linejoin="round"/><rect x="37" y="300" width="26" height="16" rx="3" fill="#e9f1fb" stroke="#0270CC" stroke-width="2.4"/><path d="M40 316 L44 334 H56 L60 316" fill="#e9f1fb" stroke="#0270CC" stroke-width="2.4" stroke-linejoin="round"/></svg><figcaption>Lotus</figcaption></figure></div><p class="lc-four-intro">There are four urinary catheters in the field of medicine worldwide. Each catheter has a distinctive FDA indication and specific instructions for use.</p></div>
 					</div>
 					<div class="service-divider"></div>
 					<div class="service-solution-wrap">
@@ -1579,7 +1584,7 @@
 											class="solution-hover-icon" />
 									</div>
 									<h3 class="solution-accordion-title">
-										8.4 days average hospital stay
+										The Foley Balloon Catheter
 									</h3>
 								</div>
 								<div class="accordion-icon-wrap">
@@ -1597,19 +1602,7 @@
 								</div>
 							</div>
 							<div class="solution-accordion-content">
-								<p class="solution-accordion-description">
-									A CAUTI keeps patients in hospital for 8.4 days on average, well beyond
-									the 5.5 days for a complicated UTI, and every extra bed-day is capacity
-									the hospital cannot use.
-									<sup
-										><a
-											href="https://academic.oup.com/ofid/article/4/suppl_1/S348/4294891"
-											target="_blank"
-											rel="noopener"
-											>9</a
-										></sup
-									>
-								</p>
+								<p class="solution-accordion-description"><strong>FDA Indications for Use:</strong> Continuous urinary bladder drainage and/or irrigation through the urethra.</p><p class="solution-accordion-description">The Foley Catheter has been with us for about 100 years now. It is a catheter with a balloon to be inflated using sterile water via a side channel. The average inflation of the balloon is 10-30 cc of sterile water, so the average inflated Foley balloon weighs 10-30 grams.</p>
 							</div>
 							<div
 								style="opacity: 1"
@@ -1637,7 +1630,7 @@
 									<h3
 										style="color: rgb(87, 93, 89)"
 										class="solution-accordion-title">
-										23% need intensive care
+										The Malecot Catheter
 									</h3>
 								</div>
 								<div class="accordion-icon-wrap">
@@ -1657,18 +1650,7 @@
 							<div
 								style="height: 0px"
 								class="solution-accordion-content">
-								<p class="solution-accordion-description">
-									Close to one in four CAUTI patients ends up in the ICU, taking up the
-									most expensive beds a facility has.
-									<sup
-										><a
-											href="https://academic.oup.com/ofid/article/4/suppl_1/S348/4294891"
-											target="_blank"
-											rel="noopener"
-											>9</a
-										></sup
-									>
-								</p>
+								<p class="solution-accordion-description">The Malecot Catheter has been with us for over 120 years now. It is used almost exclusively by urologists. The Malecot needs a stiff metal or plastic introducer to change the 3-4 wing or flower configuration to a straight catheter to pass through a surgically created hole. This hole could be in the lower abdomen to drain the urinary bladder, as in suprapubic cystostomy, or in the flank of the patient to drain urine from the renal pelvis, as in nephrostomy.</p><p class="solution-accordion-description">Once the flower configuration is located inside the urinary bladder or renal pelvis by direct vision or fluoroscopy, the stiff introducer is withdrawn and the catheter reverts back to its 3-4 wing flower configuration. To remove it, the introducer is passed through the lumen to the inside of the tip under direct vision or fluoroscopy, and by pulling the shaft towards the operator, the flower configuration changes into a straight catheter again, which can then be pulled out.</p><p class="solution-accordion-description">Indications for Use:</p><p class="solution-accordion-description"><strong>Suprapubic Cystostomy:</strong> through a surgically created hole in the lower abdomen just above the pubic bone. The urinary bladder is drained for a long period of time and sometimes for the life of the patient.</p><p class="solution-accordion-description"><strong>Nephrostomy:</strong> through a surgically created hole in the flank of the patient connected to the pelvis of the kidney. The catheter drains the urine from the renal pelvis for days, weeks, or for the life of the patient.</p>
 							</div>
 							<div
 								style="opacity: 0"
@@ -1696,7 +1678,7 @@
 									<h3
 										style="color: rgb(87, 93, 89)"
 										class="solution-accordion-title">
-										>2× higher mortality
+										The Straight Catheter
 									</h3>
 								</div>
 								<div class="accordion-icon-wrap">
@@ -1716,18 +1698,7 @@
 							<div
 								style="height: 0px"
 								class="solution-accordion-content">
-								<p class="solution-accordion-description">
-									Unadjusted mortality more than doubles (3.6% against 1.6%), which is
-									both a direct quality measure and a rising source of liability.
-									<sup
-										><a
-											href="https://academic.oup.com/ofid/article/4/suppl_1/S348/4294891"
-											target="_blank"
-											rel="noopener"
-											>9</a
-										></sup
-									>
-								</p>
+								<p class="solution-accordion-description">The straight catheter has been with us since early civilization. The Egyptians were the first to describe draining the urinary bladder using a stiff hollow bone or a leather tube lubricated with butter or cheese, followed by ancient Indian and ancient Chinese descriptions. Synthetic polymers came into use only about 180 years ago. The straight catheter is a straight hollow malleable tube, lubricated and passed urethrally to empty the bladder. Since the advent of the Malecot and Foley balloon Catheter, straight catheter use is restricted by the FDA to intermittent self catheterization in patients who are unable to empty their bladder. Failure to empty a distended urinary bladder leads to back pressure on both kidneys, which would end in renal failure and death.</p><p class="solution-accordion-description"><strong>Indications for Use:</strong> Clean Self Intermittent Catheterization by the patient. The kit usually has a Straight Catheter with hydrophilic coating and a foil sachet of sterile water used to lubricate the catheter for easy insertion.</p>
 							</div>
 							<div
 								style="opacity: 0"
@@ -1755,7 +1726,7 @@
 									<h3
 										style="color: rgb(87, 93, 89)"
 										class="solution-accordion-title">
-										24% come back with a UTI
+										The Lotus Catheter
 									</h3>
 								</div>
 								<div class="accordion-icon-wrap">
@@ -1775,18 +1746,7 @@
 							<div
 								style="height: 0px"
 								class="solution-accordion-content">
-								<p class="solution-accordion-description">
-									Within a year, 24% of CA-UTI patients are readmitted with a UTI
-									diagnosis, and the figure rises to 26% in skilled nursing facilities.
-									<sup
-										><a
-											href="https://www.ajicjournal.org/article/S0196-6553(21)00204-2/abstract"
-											target="_blank"
-											rel="noopener"
-											>5</a
-										></sup
-									>
-								</p>
+								<p class="solution-accordion-description">The only urinary catheter cleared by the FDA for use as all three of the above (see sections below).</p>
 							</div>
 							<div
 								style="opacity: 0"
@@ -1796,1117 +1756,588 @@
 				</div>
 			</div>
 		</section>
-		<section class="we-serve-section">
-			<div class="container">
-				<div class="section-title text-center">
-					<h2
-						data-w-id="0bad35aa-e2bb-0247-a49b-f8205a8e515e"
-						style="opacity: 0"
-						class="we-serve-section-title">
-						The financial toll
-					</h2>
-				</div>
-				<div class="w-layout-grid grid-we-serve">
-					<div
-						data-w-id="a757dd80-505e-d9e4-beae-cdf7e16d63f5"
-						style="opacity: 0">
-						<div class="we-serve-item">
-							<div class="we-serve-image-wrap">
-								<img
-									src="assets/Images/purple_motion_blur.jpg"
-									loading="lazy"
-									alt="Serve Image"
-									class="we-serve-image" />
-							</div>
-							<div class="we-serve-top">
-								<h3 class="we-serve-title">Cost per event</h3>
-								<h3
-									class="we-serve-title"
-									style="font-size: 3rem">
-									$9,496
-								</h3>
-								<p class="we-serve-content">Median cost of one CAUTI episode</p>
-							</div>
-							<div class="we-serve-bottom">
-								<p class="we-serve-content">
-									A single CAUTI episode carries a median hospital cost of $9,496. Within
-									a year, 42% of these patients are readmitted for any reason, rising to
-									44% among SNF patients. CMS data put the 30-day readmission rate after
-									CAUTI at 20.3% against a 15.4% baseline, an excess of 4.9 percentage
-									points that traces directly to the infection.
-									<sup
-										><a
-											href="https://www.ajicjournal.org/article/S0196-6553(21)00204-2/abstract"
-											target="_blank"
-											rel="noopener"
-											>5</a
-										></sup
-									>
-									<sup
-										><a
-											href="https://www.cms.gov/medicare/payment/prospective-payment-systems/acute-inpatient-pps/hospital-readmissions-reduction-program-hrrp"
-											target="_blank"
-											rel="noopener"
-											>10</a
-										></sup
-									>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div
-						data-w-id="a757dd80-505e-d9e4-beae-cdf7e16d63f5"
-						style="opacity: 0">
-						<div class="we-serve-item">
-							<div class="we-serve-image-wrap">
-								<img
-									src="assets/Images/soft_purple_swirl.jpg"
-									loading="lazy"
-									alt="Serve Image"
-									class="we-serve-image" />
-							</div>
-							<div class="we-serve-top">
-								<h3 class="we-serve-title">Penalties from CMS</h3>
-								<h3
-									class="we-serve-title"
-									style="font-size: 3rem">
-									Up to 3%
-								</h3>
-								<p class="we-serve-content">Cut to Medicare payments</p>
-							</div>
-							<div class="we-serve-bottom">
-								<p class="we-serve-content">
-									The Hospital Readmissions Reduction Program lets CMS withhold up to 3%
-									of a hospital's total Medicare payments when readmissions run above
-									expectations.
-									<sup
-										><a
-											href="https://www.cms.gov/medicare/payment/prospective-payment-systems/acute-inpatient-pps/hospital-readmissions-reduction-program-hrrp"
-											target="_blank"
-											rel="noopener"
-											>7</a
-										></sup
-									>
-									A separate 1% penalty applies under the HAC Reduction Program to
-									hospitals in the worst-performing quartile, and CAUTI is one of the six
-									conditions it measures directly.
-									<sup
-										><a
-											href="https://www.cms.gov/medicare/payment/prospective-payment-systems/acute-inpatient-pps/hospital-acquired-condition-reduction-program-hacrp"
-											target="_blank"
-											rel="noopener"
-											>6</a
-										></sup
-									>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div
-						data-w-id="a757dd80-505e-d9e4-beae-cdf7e16d63f5"
-						style="opacity: 0">
-						<div class="we-serve-item">
-							<div class="we-serve-image-wrap">
-								<img
-									src="assets/Images/purple_motion_blur.jpg"
-									loading="lazy"
-									alt="Serve Image"
-									class="we-serve-image" />
-							</div>
-							<div class="we-serve-top">
-								<h3 class="we-serve-title">-</h3>
-								<h3
-									class="we-serve-title"
-									style="font-size: 3rem">
-									6 Hours
-								</h3>
-								<p class="we-serve-content">When tissue damage begins</p>
-							</div>
-							<div class="we-serve-bottom">
-								<p class="we-serve-content">
-									Biopsies show acute and chronic inflammation at the bladder dome within
-									6 hours of a Foley being placed. The Lotus catheter's 0.5 cm tip
-									removes that continuous mechanical pressure altogether.
-									<sup
-										><a
-											href="https://www.nature.com/articles/s41598-018-24818-w"
-											target="_blank"
-											rel="noopener"
-											>8</a
-										></sup
-									>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="our-mission-section section-spacing">
+		<section class="solution-section section-spacing" id="foley-problem">
+			<style>
+				#foley-problem { padding-top: 0; }
+				#foley-problem .solution-section-title { margin-bottom: 0; }
+				#foley-problem .solution-one-description, #foley-problem .lc-fp-text { font-size: 1rem; line-height: 1.65; margin: 0; }
+				#foley-problem .solution-two-title, #foley-problem .solution-three-title, #foley-problem .solution-four-title { max-width: none; }
+				#foley-problem .solution-three-title { margin-bottom: 0.75rem; }
+				#foley-problem .solution-item-three { border: 1px solid #e3e0e8; }
+				#foley-problem .lc-fp-text { color: #26324a; }
+				#foley-problem .solution-item-four .lc-fp-text, #foley-problem .lc-fp-dark .lc-fp-text { color: var(--color--gray-6); }
+				#foley-problem .solution-item-four { grid-template-columns: 1fr; }
+				#foley-problem .lc-fp-num { font-family: var(--_typography---font-family--heading); font-size: 2.6rem; line-height: 1; color: #0270CC; }
+				#foley-problem .lc-fp-num small { font-size: 1rem; font-family: inherit; color: inherit; margin-left: 0.35rem; }
+				#foley-problem .lc-fp-dark .lc-fp-num { color: #7cc4f2; }
+				#foley-problem .lc-fp-cap { font-size: 0.85rem; color: #5b6478; margin: 0.35rem 0 0; }
+				#foley-problem .lc-fp-dark .lc-fp-cap { color: var(--color--gray-6); }
+				#foley-problem .lc-fp-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap--gap-4); margin-top: var(--gap--gap-4); }
+				#foley-problem .lc-fp-row > div { justify-content: flex-start; gap: 1.1rem; padding: 1.75rem; }
+				#foley-problem .lc-fp-dark { display: flex; flex-direction: column; background-color: var(--color--black); border-radius: var(--border-radius--lg); color: var(--color--white); }
+				#foley-problem .lc-fp-dark .solution-two-title { color: var(--color--secondary-2); }
+				#foley-problem .solution-item-two, #foley-problem .solution-item-three { gap: 1.1rem; justify-content: flex-start; }
+				#foley-problem .grid-solution-counter { grid-template-columns: 1fr auto 1fr; padding: 1.5rem 2.5rem; }
+				#foley-problem .counter-count-wrap { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: nowrap; }
+				#foley-problem .counter-count-wrap h2 { font-size: 1.9rem; white-space: nowrap; margin: 0; }
+				#foley-problem .solution-counter-info { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+				#foley-problem .lc-fp-art { flex: 1; display: flex; align-items: center; justify-content: center; padding: 2.5rem 1rem 0; min-height: 320px; }
+				#foley-problem .lc-fp-art svg { width: 100%; max-width: 250px; height: auto; overflow: visible; filter: drop-shadow(0 0 30px rgba(124, 196, 242, 0.25)); }
+				@media (max-width: 991px) { #foley-problem .lc-fp-row { grid-template-columns: 1fr; } }
+			</style>
 			<div class="container-medium">
-				<h3
-					data-w-id="d224cf46-a5d8-9252-1220-3f6c0e410051"
-					style="opacity: 0"
-					class="our-mission-content">
-					Feneley, Hopley & Wells
-				</h3>
-				<div class="w-layout-grid grid-our-mission">
-					<img
-						src="assets/Images/liquid_glass_transparent.png"
-						loading="lazy"
-						style="opacity: 0"
-						data-w-id="98707999-adc5-64c0-091b-14e8848cdd4e"
-						alt="Decoration"
-						class="decoration-03" />
-					<div class="our-mission-item">
-						<div class="w-layout-grid grid-mission">
-							<p
-								data-w-id="c1d14a08-a119-3c85-d031-08a4333aae57"
-								style="opacity: 0"
-								class="our-mission-description">
-								Independent researchers calculated that a better catheter delivering
-								just half of its potential could save about $18 billion a year in the
-								U.S. and prevent more than 5,000 deaths annually.5
-							</p>
+				<div class="section-title text-center">
+					<h2 class="solution-section-title">The Problem with the Foley Balloon Catheter</h2>
+				</div>
+				<div class="w-layout-grid grid-solution">
+					<div class="left-solution-item-one" style="background-image: linear-gradient(#0c111ee6, #0c111ee6), url(assets/Images/iridescent_oil_bubbles.webp);">
+						<div class="lc-fp-art"><svg viewBox="0 0 160 340" role="img" aria-label="Foley catheter with an inflated balloon"><rect x="72" y="20" width="16" height="268" rx="8" fill="rgba(255,255,255,0.08)" stroke="#dbe9f8" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="80" cy="42" rx="4" ry="7" fill="rgba(124,196,242,0.3)" stroke="#dbe9f8" stroke-width="1.8"/><ellipse cx="80" cy="120" rx="52" ry="76" fill="rgba(124,196,242,0.22)" stroke="#7cc4f2" stroke-width="2.6"/><rect x="72" y="20" width="16" height="268" rx="8" fill="none" stroke="#dbe9f8" stroke-width="2.4"/><path d="M88 250 C112 250 120 234 120 218" fill="none" stroke="#dbe9f8" stroke-width="2.4" stroke-linecap="round"/><rect x="114" y="208" width="12" height="14" rx="3" fill="rgba(255,255,255,0.1)" stroke="#dbe9f8" stroke-width="2"/><rect x="65" y="288" width="30" height="16" rx="3" fill="rgba(255,255,255,0.1)" stroke="#dbe9f8" stroke-width="2.4"/><path d="M69 304 L73 328 H87 L91 304" fill="rgba(255,255,255,0.1)" stroke="#dbe9f8" stroke-width="2.4" stroke-linejoin="round"/></svg></div>
+						<div class="solution-one">
+							<h3 class="solution-one-title">Balloon on the most sensitive part of the bladder</h3>
+							<p class="solution-one-description">The Foley Catheter is stabilized inside the urinary bladder using an inflatable balloon filled with 5cc-30cc of sterile water. The water is non-compressible. The diameter of this non-compressible balloon ranges between 2.5 and 4.5 centimeters (1 inch to 1.77 inches). This balloon, weighing approximately 5-30 grams, sits on the most sensitive part of the urinary bladder, the trigone and the bladder neck, causing continuous painful spasm as long as the catheter is indwelling. Continuous medication is usually necessary to relieve the pain and discomfort.</p>
 						</div>
-						<div class="mission-divider"></div>
-						<div
-							data-w-id="8219932a-b89f-c652-1430-f40334628228"
-							style="opacity: 0"
-							class="our-mission-client">
-							<div>Journal of Medical Engineering & Technology</div>
+						<div class="w-layout-grid grid-solution-counter">
+							<div class="solution-counter-info">
+								<div class="counter-count-wrap"><h2 class="counter-count-number solution-counter">2.5-4.5</h2><h2 class="counter-count-number solution-counter">cm</h2></div>
+								<p class="no-margin-bottom">Balloon diameter</p>
+							</div>
+							<div class="divider"></div>
+							<div class="solution-counter-info">
+								<div class="counter-count-wrap"><h2 class="counter-count-number solution-counter">5-30</h2><h2 class="counter-count-number solution-counter">g</h2></div>
+								<p class="no-margin-bottom">Balloon weight</p>
+							</div>
 						</div>
+					</div>
+					<div class="right-solution-item">
+						<div class="w-layout-grid grid-solutions">
+							<div class="solution-item-two">
+								<div class="solution-two-top"><h3 class="solution-two-title">The external stabilizer is merely protective</h3></div>
+								<p class="lc-fp-text">The balloon is the sole stabilizer keeping the Foley catheter indwelling. The standard of care of fixing the Foley Catheter to the inner side of the patient’s thigh with adhesive tape, Velcro, or a special stabilizer is merely protective. It lessens the continuous irritation of the trigone and bladder neck by the balloon, and it protects against the catheter being accidentally or intentionally pulled out (for example by a confused or demented patient) with the balloon fully inflated.</p>
+							</div>
+							<div class="solution-item-three">
+								<div class="solution-three-top"><div class="solution-badge">Residual urine 10-100 cc</div><img src="assets/Images/icon2.svg" loading="lazy" alt="" class="solution-icon" /></div>
+								<div class="solution-three-bottom">
+									<h3 class="solution-three-title">Residual urine and urgency</h3>
+									<p class="lc-fp-text">The Foley catheter’s two drainage ports are located at the tip, above the balloon. Because of this high location, residual urine of 10-100cc remains inside the bladder at all times (Roger C.L. Feneley et al.). The first sensation to urinate starts at about 50 cc of urine. The inflated balloon (5-30 cc) plus residual urine averaging 30-50 cc means most patients sense the urge to urinate as long as the catheter is indwelling, causing painful bladder spasm that requires antispasmodic and at times analgesic medication. Uncontrolled urine may leak around the catheter, soiling the patient, his clothes and his surroundings.</p>
+								</div>
+							</div>
+						</div>
+						<div class="solution-item-four">
+							<div class="solution-four-left">
+								<div>
+									<h3 class="solution-four-title">Catheter tip and granuloma</h3>
+									<p class="lc-fp-text">The tip housing the two drainage ports is usually 2.5-4.5 centimeters long and rests on the non-compressible balloon. This tip pushes against the dome of the bladder, upon which all bowels rest. Within 24-48 hours, 100% of patients with an indwelling Foley catheter develop a catheter granuloma. Microscopically, all catheter granulomas contain acute as well as chronic inflammatory cells.</p>
+								</div>
+								<div class="solution-four-list"><div class="solution-list-item">Tip 2.5-4.5 cm long</div><div class="solution-list-item">Granuloma within 24-48 hours</div><div class="solution-list-item">100% of patients</div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lc-fp-row">
+					<div class="solution-item-two">
+						<div class="solution-two-top"><h3 class="solution-two-title">CAUTI</h3></div>
+						<p class="lc-fp-text">The combination of high residual urine, the balloon constantly irritating the trigone and bladder neck, and the tip pushing against the dome produces acute/chronic inflammation (cystitis), seen endoscopically in every single case with an indwelling Foley catheter. These factors cause CAUTI, which results in staggering cost, morbidity and even mortality (Roger C.L. Feneley et al.).</p>
+					</div>
+					<div class="solution-item-three">
+						<div class="solution-three-top"><div class="solution-badge">Accidental pull-out</div><img src="assets/Images/icon3.svg" loading="lazy" alt="" class="solution-icon" /></div>
+						<div class="solution-three-bottom">
+							<div class="lc-fp-num">5-50<small>pounds</small></div>
+							<p class="lc-fp-cap">Force to dislodge with the balloon fully inflated</p>
+							<h3 class="solution-three-title" style="margin-top: 1.1rem">Accidental pull-out</h3>
+							<p class="lc-fp-text">The force needed to dislodge the Foley catheter with the balloon fully inflated ranges from 5 to 50 pounds. This is not an uncommon incident. It may cause severe bleeding and tears of the bladder neck and urethra, and may partially or completely destroy the internal sphincter mechanism, leading to partial or complete incontinence, with immediate and long-term complications.</p>
+						</div>
+					</div>
+					<div class="lc-fp-dark">
+						<h3 class="solution-two-title">Catheter coatings</h3>
+						<p class="lc-fp-text">Coating the Foley Catheter with silver nitrate or antibiotics is at best deceptive in treating the causes of CAUTI. Professor Feneley addressed this issue: none of these coatings has any scientific basis to eliminate the leading causes of CAUTI.</p>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section
-			class="info-section"
-			id="comparison">
-			<div class="container">
-				<div class="section-title text-center">
-					<p class="lc-eyebrow">Comparing the clinical data</p>
-					<h2
-						data-w-id="d36a6827-e86e-d6d5-878e-a03b7aa90596"
-						style="opacity: 0"
-						class="info-section-title">
-						Lotus against Foley
-					</h2>
-					<p style="color: white; max-width: 640px; margin: 0.75rem auto 0">
-						Results from a prospective clinical trial set beside findings published in
-						JAMA Internal Medicine.
-					</p>
-					<p
-						style="
-							color: rgba(255, 255, 255, 0.676);
-							max-width: 640px;
-							margin: 0.75rem auto 0;
-							font-size: 0.85rem;
-							line-height: 1.6;
-						">
-						<strong>Reading this table:</strong> Lotus figures are from a
-						single-center prospective clinical trial (N=50), while Foley figures are
-						from a multicenter observational study (N=2,076). The studies differ in
-						design, patient population and endpoints, so the table shows a range of
-						published outcomes and should not be read as a direct head-to-head trial.
-					</p>
-				</div>
-				<div
-					data-w-id="033f4cc0-9594-8ff8-a919-ec2f5d5d3a86"
-					style="opacity: 0"
-					class="w-layout-grid grid-info">
-					<div class="info-left">
-						<div class="info-top">
-							<div class="lc-catheter-header">
-								<img
-									src="https://images.squarespace-cdn.com/content/67bb295c3f57c626fa30bdd8/99218d5d-2c60-44cd-92ff-0872cc9a4ac8/lotus+folded.png?content-type=image%2Fpng"
-									loading="lazy"
-									alt="Lotus Catheter"
-									class="lc-catheter-header-image" />
-								<div>
-									<h3
-										class="info-title"
-										style="margin-bottom: 0.15rem">
-										Lotus Catheter™
-									</h3>
-									<div style="color: var(--color--gray-5); font-size: 0.8rem">
-										No balloon · prospective study, N=50
-									</div>
-								</div>
+		<section class="benefits-section section-spacing" id="lotus-intro">
+			<style>
+				#lotus-intro { padding-top: 0; }
+				#lotus-intro .grid-benefits-item { padding-top: 4rem; align-items: start; }
+				#lotus-intro .benefits-title-wrap { position: sticky; top: 7rem; }
+				#lotus-intro .info-list-item { gap: 1.75rem; }
+				.lc-bn-item { display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1.75rem; border-bottom: 1px solid var(--color--secondary-1); }
+				.lc-bn-item:last-child { border-bottom: 0; padding-bottom: 0; }
+				.lc-bn-num { flex: none; width: 32px; height: 32px; border-radius: 50%; background: #0270CC; color: #fff; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+				#lotus-intro .info-list-text { line-height: 1.65; }
+				#lotus-intro .benefits-image-wrap { position: sticky; top: 7rem; align-self: start; }
+				#lotus-intro .benefits-image { height: auto; max-height: 640px; background: #fff; border-radius: 0; }
+				@media (max-width: 991px) { #lotus-intro .benefits-title-wrap, #lotus-intro .benefits-image-wrap { position: static; } }
+				@media (max-width: 767px) { #lotus-intro .grid-benefits-item { grid-template-columns: 1fr; } }
+			</style>
+			<div class="container-medium">
+				<div class="w-layout-grid grid-benefits-item">
+					<div class="benefits-title-wrap">
+						<h3 class="benefits-title">Introducing the Lotus No Balloon Catheter</h3>
+						<a data-wf--button--variant="button-primary" data-w-id="d102baf6-0bbf-4311-9c79-6b424f8fe8a7" href="#contact" class="button-black w-inline-block">
+							<div class="button-left-icon"></div>
+							<div class="button-hover"></div>
+							<div class="button-text">Contact us</div>
+						</a>
+					</div>
+					<div class="info-list-item">
+						<div class="lc-bn-item">
+							<div class="lc-bn-num">1</div>
+							<div class="info-list-content">
+								<h3 class="info-list-title w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">Compressible, collapsible design</h3>
+								<div class="info-list-text w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">The 2-3 wing flower configuration of the Lotus Catheter is made of rubber polymer (Silicone, TPU, PVC, and Latex). This polymer is compressible and collapsible. The tip of the Lotus Catheter is only 0.5 centimeters long and sits on the compressible, collapsible wings.</div>
 							</div>
 						</div>
-						<div class="info-list-item">
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Insertion &amp; Removal</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good"
-											>About 4 sec to insert · about 3 sec to remove</span
-										><span class="lc-detail"
-											>One motion: push to open the wings, pull the rod to close them. No
-											syringe, no inflating, no extra supplies. Prospective study,
-											N=50.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
+						<div class="lc-bn-item">
+							<div class="lc-bn-num">2</div>
+							<div class="info-list-content">
+								<h3 class="info-list-title w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">No residual urine</h3>
+								<div class="info-list-text w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">There is no residual urine in patients with the Lotus Catheter indwelling.</div>
 							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Complications overall</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">0% UTI · 0% hematuria · ~2% spasms</span
-										><span class="lc-detail"
-											>Data from the prospective trial, N=50.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
+						</div>
+						<div class="lc-bn-item">
+							<div class="lc-bn-num">3</div>
+							<div class="info-list-content">
+								<h3 class="info-list-title w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">Away from the trigone and bladder neck</h3>
+								<div class="info-list-text w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">The 2-3 wing configuration does not sit on the most sensitive part of the bladder. It is positioned at least 2-5 centimeters above the bladder neck and trigone. If the catheter slips for any reason to sit on the bladder neck and trigone, the patient would feel only slight discomfort, as the wings weigh about three grams.</div>
 							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d501d2bf979d20df36_icon-13.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Urinary Tract Infection</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">0% UTI (0 of 50)</span
-										><span class="lc-detail"
-											>No urinary tract infection was detected anywhere in the prospective
-											cohort. N=50.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										><span class="lc-verdict lc-verdict-win">Study: 0 of 50</span>
-									</div>
-								</div>
+						</div>
+						<div class="lc-bn-item">
+							<div class="lc-bn-num">4</div>
+							<div class="info-list-content">
+								<h3 class="info-list-title w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">The thigh stabilizer is the primary stabilizer</h3>
+								<div class="info-list-text w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">The wings are not the primary stabilizer; they are a backup. Primary stability comes from firm adherence to the medial side of the patient’s thigh using the special Lotus Stabilizer or cross firm adhesive tape.</div>
 							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Residual Urine</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">4.8 mL mean PVR</span
-										><span class="lc-detail"
-											>The bladder empties almost completely, with the lumen sitting at the
-											bladder neck. Prospective study, N=50.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										><span class="lc-verdict lc-verdict-win">Study: 4.8 mL mean</span>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Patient comfort</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">0/10 insertion · 2/10 removal</span
-										><span class="lc-detail"
-											>Measured on the Wong-Baker scale: average discomfort was 0 (no pain)
-											at insertion and 2/10 at removal. N=50.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d501d2bf979d20df36_icon-13.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Problems at removal</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">0% trauma</span
-										><span class="lc-detail"
-											>No visible blood in the urine at insertion. Two accidental
-											dislodgements produced no urethral injury and no hematuria. N=50
-											cohort.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										><span class="lc-verdict lc-verdict-win">Wings fold down safely</span>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Bladder Spasms</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">2% in the prospective study</span
-										><span class="lc-detail"
-											>Built to be minimally invasive. With no balloon pressing on the
-											trigone, anticholinergic medication is less likely to be needed.
-											N=50.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Tissue Contact &amp; Inflammation</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">4.5–6.5 mm proximal tip</span
-										><span class="lc-detail"
-											>Soft, compressible silicone wings that put no lasting rigid pressure
-											on the trigone or bladder wall.<sup><a href="#fn7">7</a></sup></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d501d2bf979d20df36_icon-13.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Accidental pull-out</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good"
-											>2-3 Pound (0.90 kilogram- 1.36 kilogram)</span
-										><span class="lc-detail"
-											>The reason is the collapsible rubber polymer of the 2-3 wing flower
-											configuration. Minimal or no injury occurs in accidental pull of the
-											Lotus Catheter with the 2-3 wings fully deployed. Two cases in N=50
-											cohort confirmed zero trauma on dislodgement.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Suitability for home use</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">Simple to activate</span
-										><span class="lc-detail"
-											>Pushing deploys and pulling retracts, so no syringe is involved and
-											there is no chance of inflating a balloon inside the urethra during
-											self-insertion.<sup><a href="#fn8">8</a></sup></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Range of uses</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-good">Three devices in one</span
-										><span class="lc-detail"
-											>On May 21, 2020 the FDA made a historical clearance of the Lotus
-											Catheter to be used as: Foley Catheter, Malecot Catheter, Straight
-											Catheter. Thus, the Lotus Catheter is the only urinary catheter with
-											FDA Approval for multiple uses of all the three urinary catheters in
-											the medical field.</span
-										>
-									</div>
-								</div>
+						</div>
+						<div class="lc-bn-item">
+							<div class="lc-bn-num">5</div>
+							<div class="info-list-content">
+								<h3 class="info-list-title w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">Safer if pulled accidentally</h3>
+								<div class="info-list-text w-variant-31d64f90-c38e-e626-80e3-0efd1f3706fc">The force needed to dislodge the fully deployed wings is only 2-3 pounds (0.90-1.36 kg), because of the collapsible rubber polymer. Minimal or no injury occurs from an accidental pull.</div>
 							</div>
 						</div>
 					</div>
-					<div class="info-divider"></div>
-					<div class="info-right">
-						<div class="lc-catheter-header">
-							<img
-								src="https://images.squarespace-cdn.com/content/67bb295c3f57c626fa30bdd8/468f6f99-fe45-477e-a8c0-96170f5cb8ad/foley_.png?content-type=image%2Fpng"
-								loading="lazy"
-								alt="Foley Catheter"
-								class="lc-catheter-header-image" />
-							<div>
-								<h3
-									class="info-title"
-									style="margin-bottom: 0.15rem">
-									Foley Catheter
-								</h3>
-								<div style="color: var(--color--gray-5); font-size: 0.8rem">
-									Balloon-Based · N=2,076 observational
-								</div>
+					<div class="benefits-image-wrap">
+						<img src="assets/Images/image_20260926_011650.webp" loading="lazy" alt="Lotus Catheter wings open, folding and collapsed" class="benefits-image" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="info-section" id="comparison-table">
+			<style>
+				#comparison-table .lc-cmp { margin-top: 3.5rem; --hair: rgba(255,255,255,0.12); }
+				#comparison-table .lc-cmp-head, #comparison-table .lc-cmp-row { display: grid; grid-template-columns: minmax(200px, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.25fr); }
+				#comparison-table .lc-cmp-head { align-items: end; }
+				#comparison-table .lc-cmp-card { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; padding: 2rem 2rem 1.6rem; border-top: 1px solid rgba(255,255,255,0.18); }
+				#comparison-table .lc-cmp-card img { width: 84px; height: 84px; object-fit: contain; background: #eef3f8; border-radius: 50%; padding: 12px; }
+				#comparison-table .lc-cmp-card h3 { margin: 0; font-size: 1.55rem; line-height: 1.15; color: #fff; font-weight: 400; }
+				#comparison-table .lc-cmp-card.lc-cmp-lotus { border-top-color: #0270CC; background: linear-gradient(180deg, rgba(2,112,204,0.20), rgba(2,112,204,0.07)); }
+				#comparison-table .lc-cmp-card.lc-cmp-lotus, #comparison-table .lc-cmp-good { border-left: 1px solid rgba(2,112,204,0.45); border-right: 1px solid rgba(2,112,204,0.45); }
+				#comparison-table .lc-cmp-row { border-top: 1px solid var(--hair); transition: background-color .3s ease; }
+				#comparison-table .lc-cmp-row:hover { background: rgba(255,255,255,0.025); }
+				#comparison-table .lc-cmp-row:last-child { border-bottom: 1px solid var(--hair); }
+				#comparison-table .lc-cmp-label { display: flex; align-items: center; gap: 1rem; padding: 1.7rem 1rem 1.7rem 0; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 600; }
+				#comparison-table .lc-cmp-idx { color: #4aa3ee; font-variant-numeric: tabular-nums; letter-spacing: 0.06em; }
+				#comparison-table .lc-cmp-cell { display: flex; align-items: center; padding: 1.7rem 2rem; font-family: var(--_typography---font-family--heading); font-size: 1.4rem; line-height: 1.25; font-weight: 400; }
+				#comparison-table .lc-cmp-good { background: linear-gradient(180deg, rgba(2,112,204,0.07), rgba(2,112,204,0.07)); color: #fff; position: relative; }
+				#comparison-table .lc-cmp-good::before { content: ""; position: absolute; left: 0; top: 50%; width: 3px; height: 0; background: #0270CC; transform: translateY(-50%); transition: height .3s ease; }
+				#comparison-table .lc-cmp-row:hover .lc-cmp-good::before { height: 46%; }
+				#comparison-table .lc-cmp-bad { color: rgba(255,255,255,0.45); }
+				#comparison-table .lc-cmp-row:last-child .lc-cmp-good { border-bottom: 1px solid rgba(2,112,204,0.45); }
+				@media (max-width: 991px) {
+					#comparison-table .lc-cmp-head, #comparison-table .lc-cmp-row { grid-template-columns: minmax(130px, 0.7fr) minmax(0, 1.2fr) minmax(0, 1.2fr); }
+					#comparison-table .lc-cmp-cell { font-size: 1.15rem; padding: 1.4rem 1.2rem; }
+					#comparison-table .lc-cmp-card { padding: 1.4rem 1.2rem 1.2rem; }
+					#comparison-table .lc-cmp-card h3 { font-size: 1.25rem; }
+				}
+				@media (max-width: 767px) {
+					#comparison-table .lc-cmp-head { grid-template-columns: 1fr 1fr; }
+					#comparison-table .lc-cmp-head > div:first-child { display: none; }
+					#comparison-table .lc-cmp-card { padding: 1rem 0.9rem; }
+					#comparison-table .lc-cmp-card img { width: 56px; height: 56px; padding: 8px; }
+					#comparison-table .lc-cmp-card h3 { font-size: 1rem; }
+					#comparison-table .lc-cmp-row { grid-template-columns: 1fr 1fr; }
+					#comparison-table .lc-cmp-label { grid-column: 1 / -1; padding: 1.2rem 0 0.4rem; }
+					#comparison-table .lc-cmp-cell { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0.35rem; padding: 0.5rem 0.9rem 1.2rem; font-size: 1.05rem; }
+					#comparison-table .lc-cmp-cell::before { content: attr(data-col); font-family: inherit; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; }
+					#comparison-table .lc-cmp-good::before { position: static; width: auto; height: auto; background: none; transform: none; transition: none; }
+					#comparison-table .lc-cmp-row:hover .lc-cmp-good::before { height: auto; }
+				}
+			</style>
+			<div class="container-medium">
+				<div class="section-title text-center">
+					<h2 class="info-section-title">Foley vs. Lotus: Side-by-Side Comparison</h2>
+				</div>
+				<div class="lc-cmp">
+					<div class="lc-cmp-head">
+						<div></div>
+						<div class="lc-cmp-card lc-cmp-lotus">
+							<img src="https://images.squarespace-cdn.com/content/67bb295c3f57c626fa30bdd8/99218d5d-2c60-44cd-92ff-0872cc9a4ac8/lotus+folded.png?content-type=image%2Fpng" loading="lazy" alt="Lotus Catheter" />
+							<h3>Lotus No Balloon Catheter</h3>
+						</div>
+						<div class="lc-cmp-card">
+							<img src="https://images.squarespace-cdn.com/content/67bb295c3f57c626fa30bdd8/468f6f99-fe45-477e-a8c0-96170f5cb8ad/foley_.png?content-type=image%2Fpng" loading="lazy" alt="Foley Catheter" />
+							<h3>Foley Balloon Catheter</h3>
+						</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">01</span>Stabilizer inside bladder</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">2-3 collapsible polymer wings</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">Water-filled balloon (5-30 cc), non-compressible</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">02</span>Weight inside bladder</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">About 3 grams</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">5-30 grams</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">03</span>Position</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">2-5 cm above trigone and bladder neck</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">Sits on trigone and bladder neck</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">04</span>Primary stabilizer</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">Thigh stabilizer / adhesive tape</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">Balloon</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">05</span>Tip length</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">0.5 cm</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">2.5-4.5 cm</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">06</span>Residual urine</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">None</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">10-100 cc</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">07</span>Force to dislodge</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">2-3 pounds</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">5-50 pounds</div>
+					</div>
+					<div class="lc-cmp-row">
+						<div class="lc-cmp-label"><span class="lc-cmp-idx">08</span>FDA indications</div>
+						<div class="lc-cmp-cell lc-cmp-good" data-col="Lotus">Foley, Malecot, and Straight Catheter uses</div>
+						<div class="lc-cmp-cell lc-cmp-bad" data-col="Foley">Urethral drainage and/or irrigation</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="our-story-section section-spacing" id="fda-indications">
+			<style>
+				#fda-indications .our-story-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+				#fda-indications .our-story-description { font-size: 1.1rem; }
+				#fda-indications .lc-fda-icon { display: block; width: 64px; height: 64px; background-color: #0270CC; -webkit-mask: var(--icon-url) center / contain no-repeat; mask: var(--icon-url) center / contain no-repeat; }
+				#fda-indications .lc-fda-label { display: inline-block; color: #0f1f3d; font-family: var(--_typography---font-family--heading); font-weight: 400; font-size: 1.35rem; margin-bottom: 0.4rem; }
+				#fda-indications .our-story-text { line-height: 1.6; }
+				@media (max-width: 767px) { #fda-indications .grid-our-story { grid-template-columns: 1fr; } }
+			</style>
+			<div class="container-small">
+				<div class="our-story-info">
+					<div class="our-story-top">
+						<h2 class="our-story-title">FDA-Cleared Indications for Use</h2>
+						<p class="our-story-description">On May 21, 2020, the FDA made a historic clearance of the Lotus Catheter for use as:</p>
+					</div>
+					<div class="our-story-bottom">
+						<div class="w-layout-grid grid-our-story">
+						<div>
+							<div class="our-story-item">
+								<span class="lc-fda-icon" style="--icon-url: url('assets/Images/cath-foley.svg')"></span>
+								<div class="our-story-text"><strong class="lc-fda-label">A Foley Catheter:</strong><br />urinary bladder drainage and irrigation.</div>
 							</div>
 						</div>
-						<div class="info-list-item">
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Insertion &amp; Removal</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">Several steps</span
-										><span class="lc-detail"
-											>A syringe is needed to inflate the balloon at insertion and deflate
-											it at removal, and incomplete deflation can injure the urethra during
-											extraction.<sup
-												><a
-													href="https://pubmed.ncbi.nlm.nih.gov/21871052/"
-													target="_blank"
-													rel="noopener"
-													>4</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
+						<div>
+							<div class="our-story-item">
+								<span class="lc-fda-icon" style="--icon-url: url('assets/Images/cath-malecot.svg')"></span>
+								<div class="our-story-text"><strong class="lc-fda-label">A Malecot Catheter:</strong><br />suprapubic cystostomy and nephrostomy drainage and irrigation.</div>
 							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Complications overall</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">57% reported ≥1 complication</span
-										><span class="lc-detail"
-											>Reported within 30 days; noninfectious complications occurred five
-											times as often as infectious ones. N=2,076.<sup
-												><a
-													href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2686144"
-													target="_blank"
-													rel="noopener"
-													>2</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
+						</div>
+						<div>
+							<div class="our-story-item">
+								<span class="lc-fda-icon" style="--icon-url: url('assets/Images/cath-straight.svg')"></span>
+								<div class="our-story-text"><strong class="lc-fda-label">A Straight Catheter:</strong><br />clean intermittent catheterization.</div>
 							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d501d2bf979d20df36_icon-13.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Urinary Tract Infection</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">5.7% diagnosed UTI</span
-										><span class="lc-detail"
-											>5.7% said they were told they had a UTI, and 10.5% reported some
-											infectious complication (fever, chills, burning, urgency).
-											N=2,076.<sup
-												><a
-													href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2686144"
-													target="_blank"
-													rel="noopener"
-													>2</a
-												></sup
-											></span
-										><span class="lc-verdict lc-verdict-risk"
-											>Risk tied to the balloon</span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Residual Urine</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">77 mL mean PVR</span
-										><span class="lc-detail"
-											>Compared with 0 mL for straight catheters. The balloon raises the
-											lumen above the urine that pools below it, so the bladder cannot
-											empty fully and bacteria can colonize.<sup
-												><a
-													href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-													target="_blank"
-													rel="noopener"
-													>1*</a
-												></sup
-											></span
-										><span class="lc-verdict lc-verdict-risk">Urine stays pooled</span>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Patient comfort</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">54.5% reported pain</span
-										><span class="lc-detail"
-											>Pain or discomfort while the catheter was in place, as reported by
-											patients (subgroup n=124).<sup
-												><a
-													href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2686144"
-													target="_blank"
-													rel="noopener"
-													>2</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d501d2bf979d20df36_icon-13.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Problems at removal</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">30.9% removal complications</span
-										><span class="lc-detail"
-											>A composite of pain, discomfort, bleeding and/or trauma at removal.
-											Separately, 10.0% noticed blood in the urine while catheterized.<sup
-												><a
-													href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2686144"
-													target="_blank"
-													rel="noopener"
-													>2</a
-												></sup
-											></span
-										><span class="lc-verdict lc-verdict-risk"
-											>Risk of pulling the balloon out</span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Bladder Spasms</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">34.7% with catheter in place</span
-										><span class="lc-detail"
-											>34.7% had urgency or spasms while catheterized, and 24.0% still had
-											them after removal. Balloon pressure on the trigone is a known
-											contributor.<sup
-												><a
-													href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2686144"
-													target="_blank"
-													rel="noopener"
-													>2</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Tissue Contact &amp; Inflammation</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad">Tissue damage from the balloon</span
-										><span class="lc-detail"
-											>An inflated balloon presses continuously on the bladder trigone, and
-											histologic inflammation and damage begin within 6 hours.<sup
-												><a
-													href="https://www.nature.com/articles/s41598-018-24818-w"
-													target="_blank"
-													rel="noopener"
-													>3</a
-												></sup
-											></span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d501d2bf979d20df36_icon-13.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Accidental pull-out</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-bad"
-											>5 Pounds- 50 Pounds (2.268 kilogram- 20.26 kilogram force)</span
-										><span class="lc-detail"
-											>This is not an uncommon incidence. This may cause severe bleeding
-											and tear of the bladder neck and urethra with immediate and late
-											complications. Pulling out a 10 mL balloon by force took about 3.8 kg
-											(8.4 lbs) in female cadavers<sup
-												><a
-													href="https://www.heraldopenaccess.us/openaccess/a-pilot-study-comparing-foley-catheter-and-cystosure-catheter-balloon-volumes-and-pullout-forces-in-female-cadavers"
-													target="_blank"
-													rel="noopener"
-													>5</a
-												></sup
-											>, and roughly 9.3 lbs in males<sup
-												><a
-													href="https://pubmed.ncbi.nlm.nih.gov/21871052/"
-													target="_blank"
-													rel="noopener"
-													>4</a
-												></sup
-											>. Injuries can include urethral laceration and stricture.</span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d5298c2444edf87bde_icon-11.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Suitability for home use</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-muted">Needs a syringe for the balloon</span
-										><span class="lc-detail"
-											>Inflating and deflating it oneself brings the risks of inflating the
-											balloon inside the urethra, deflating it incompletely, or a faulty
-											syringe.</span
-										>
-									</div>
-								</div>
-							</div>
-							<div
-								data-wf--info-list--variant="light"
-								class="info-list">
-								<span
-									class="info-list-icon"
-									style="
-										--icon-url: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690303d52b3f381f1efb4b27_icon-12.svg&quot;);
-									"></span>
-								<div class="info-list-content">
-									<h3 class="info-list-title">Range of uses</h3>
-									<div class="info-list-text">
-										<span class="lc-stat-muted">One function per device</span
-										><span class="lc-detail"
-											>Foley (indwelling), straight (intermittent) and suprapubic catheters
-											are distinct products, each with its own design, packaging and
-											SKU.</span
-										>
-									</div>
-								</div>
-							</div>
+						</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="case-study-section section-spacing-bottom">
+
+
+
+		<section class="graph-section" id="how-used">
+			<style>
+				#how-used { position: relative; overflow: hidden; }
+				#how-used .container-medium { position: relative; z-index: 1; }
+				#how-used .graph-title-wrap { max-width: 760px; }
+				#how-used .graph-description { font-size: 1.1rem; line-height: 1.6; max-width: 640px; }
+				#how-used .graph-description strong { color: #7cc4f2; font-weight: 600; }
+				#how-used .grid-graph { grid-template-columns: 1fr; }
+				#how-used .graph-counter-items { flex-flow: row; align-items: stretch; gap: var(--gap--gap-4); }
+				#how-used .lc-use-card { flex: 1 1 0; min-width: 0; flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; border: 1px solid rgba(189, 223, 247, 0.14); border-radius: 16px; }
+				#how-used .lc-use-title { margin: 0; color: #fff; font-family: var(--_typography---font-family--heading); font-weight: 400; font-size: 1.6rem; line-height: 1.2; }
+				#how-used .lc-use-p { margin: 0; color: var(--color--gray-6); font-size: 0.98rem; line-height: 1.65; }
+				#how-used .graph-image { position: absolute; right: -60px; top: 3rem; width: 720px; max-width: none; height: 270px; margin-top: 0; opacity: 0.45; z-index: 0; pointer-events: none; }
+				@media (max-width: 991px) { #how-used .graph-counter-items { display: flex; flex-flow: column; grid-template-columns: none; } #how-used .lc-use-card { flex: none; width: 100%; } #how-used .graph-image { display: none; } }
+			</style>
 			<div class="container-medium">
-				<div
-					data-w-id="0677b2f6-dc1d-43c7-e881-250255903a52"
-					style="opacity: 0"
-					class="section-title text-center">
-					<p class="lc-eyebrow">How it works</p>
-					<h3 class="case-section-title">
-						The balloon wasn't upgraded.<br />
-						It was eliminated.
-					</h3>
+				<div class="section-title graph-title-wrap">
+					<h2 class="graph-title">How the Lotus Catheter Is Used</h2>
+					<div class="graph-description">The Lotus Catheter is the only FDA-approved indwelling urinary catheter that can be used by the patient at home.</div>
 				</div>
-				<p
-					style="
-						max-width: 640px;
-						margin: 0 auto 2rem;
-						text-align: center;
-						color: var(--color--gray-6);
-					">
-					Almost complete emptying, built in. The lumen of the Lotus Catheter rests
-					low at the trigone, the bladder's natural drainage point, with no balloon
-					in the way of flow.
-				</p>
-				<div class="lc-mechanism-image-wrap">
-					<img
-						src="https://images.squarespace-cdn.com/content/67bb295c3f57c626fa30bdd8/a9f0ab1b-b188-41f5-87c2-948794ca0972/Lotus+Foley+Lumens.png?content-type=image%2Fpng"
-						loading="lazy"
-						alt="Comparison: Lotus Catheter lumen at the trigone enables near-complete drainage vs Foley balloon elevating lumen above residual urine" />
-					<div class="lc-mechanism-vs">VS</div>
-				</div>
-				<div class="lc-mechanism-grid">
-					<div class="lc-mechanism-card good">
-						<div class="lc-mechanism-stat">Residual: ~4.8 mL</div>
-						<h4 style="color: white">Lumen positioned at the trigone</h4>
-						<p>
-							The drainage eye of the Lotus Catheter is at the bladder's lowest
-							anatomical point, the trigone, so urine drains by gravity and the bladder
-							empties almost completely.
-						</p>
-					</div>
-					<div class="lc-mechanism-card bad">
-						<div
-							class="lc-mechanism-stat"
-							style="color: white">
-							Drainage left unfinished
+				<div class="w-layout-grid grid-graph">
+					<div class="graph-counter-items">
+						<div class="graph-counter-item lc-use-card">
+							<h3 class="lc-use-title">As a Foley Catheter</h3>
+							<p class="lc-use-p">Inserted urethrally under strict aseptic precautions for continuous bladder drainage and/or irrigation. There is a fundamental safety difference between the Foley balloon and the Lotus wings as stabilizers, as clarified in the FDA-approved instructions for use. The catheter is stabilized on the inner thigh using the Lotus Catheter Stabilizer or cross adhesive tapes, so the wings do not sit on the bladder neck or trigone.</p>
 						</div>
-						<h4 style="color: white">The balloon lifts the lumen</h4>
-						<p>
-							The inflated Foley balloon raises the drainage eye over the urine that
-							has collected, so the bladder can't empty fully and a stagnant pool forms
-							where bacteria thrive.<sup
-								><a
-									href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-									target="_blank"
-									rel="noopener"
-									>1</a
-								></sup
-							>
-						</p>
+						<div class="graph-counter-item lc-use-card">
+							<h3 class="lc-use-title">As a Malecot Catheter</h3>
+							<p class="lc-use-p">Used in acute and chronic suprapubic cystostomy and in acute and chronic nephrostomy. Stabilization is achieved using the Lotus Catheter Stabilizer or cross adhesive tapes. Precaution: in acute nephrostomy with a JJ ureteral stent present, a Specialty Two Wing Nephrostomy Lotus Catheter is preferable to the standard three wing catheter. During removal or replacement, the healthcare provider rotates the two wings away from the JJ stent under fluoroscopy to avoid accidental dislodgement of the stent.</p>
+						</div>
+						<div class="graph-counter-item lc-use-card">
+							<h3 class="lc-use-title">As a Straight Catheter</h3>
+							<p class="lc-use-p">Used in Clean Intermittent Catheterization by the patient at home. The catheter has a hydrophilic coating, and the sterile package includes a sterile foil sachet of water as a lubricant. The patient opens the wings after full insertion to quickly drain the bladder, then discards the catheter safely.</p><p class="lc-use-p">Under the instruction of their healthcare provider, the patient may also use it as an indwelling catheter for overnight continuous drainage: insert it as a straight catheter, open the wings, stabilize it to the thigh with the wings 2.5-5 cm above the trigone and bladder neck, and connect it to a bedside or leg urine bag.</p>
+						</div>
 					</div>
 				</div>
 			</div>
+			<img src="assets/Images/lines.svg" loading="lazy" alt="" class="graph-image" />
 		</section>
-		<section class="benefit-section section-spacing">
-			<div class="container-medium">
-				<div class="w-layout-grid grid-benefit">
-					<div
-						data-w-id="083b09ee-88a3-0c74-6f03-12935f9e11c2"
-						style="opacity: 0"
-						class="benefit-image-wrap">
-						<img
-							src="assets/Images/calm_hospital_background.jpg"
-							loading="lazy"
-							alt="Benefit Image"
-							class="benefit-image" />
-					</div>
-					<div class="benefit-content">
-						<h3
-							data-w-id="bb149ff0-bda9-dde1-e2dc-e38b5b5e493a"
-							style="opacity: 0"
-							class="benefit-title">
-							What the numbers say
-						</h3>
-						<p
-							data-w-id="926b27ea-689f-779b-d43a-dabe2a57c93a"
-							style="opacity: 0"
-							class="benefit-description">
-							A JAMA Internal Medicine study following 2,076 patients at 4 U.S.
-							hospitals showed that the harm from catheters goes well beyond infection.
-							Below are the outcomes linked to balloon-based indwelling catheters.
-						</p>
-						<div
-							data-w-id="d2c96368-0bc0-55ad-1c77-885d4cf71910"
-							style="opacity: 0"
-							class="benefit-list-item">
-							<div
-								data-wf--list-item--variant="dark"
-								class="list-item">
-								<img
-									src="assets/Images/arrowright.svg"
-									loading="lazy"
-									alt="Icon"
-									class="list-icon" />
-								<div class="list-text">
-									57% had at least one complication within 30 days
-								</div>
-							</div>
-							<div
-								data-wf--list-item--variant="dark"
-								class="list-item">
-								<img
-									src="assets/Images/arrowright.svg"
-									loading="lazy"
-									alt="Icon"
-									class="list-icon" />
-								<div class="list-text">
-									55% suffered noninfectious harm such as pain, bleeding, urgency and
-									leaking
-								</div>
-							</div>
-							<div
-								data-wf--list-item--variant="dark"
-								class="list-item">
-								<img
-									src="assets/Images/arrowright.svg"
-									loading="lazy"
-									alt="Icon"
-									class="list-icon" />
-								<div class="list-text">
-									31% described trauma when the catheter was removed
-								</div>
-							</div>
-							<div
-								data-wf--list-item--variant="dark"
-								class="list-item">
-								<img
-									src="assets/Images/arrowright.svg"
-									loading="lazy"
-									alt="Icon"
-									class="list-icon" />
-								<div class="list-text">
-									44% said catheterization limited their social activities
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div
-					data-w-id="9d8e5d69-7a85-705e-c8d2-aa9fb7574f40"
-					class="w-layout-grid benefit-cta-item">
-					<div class="benefit-counter">
-						<div>Saint S, et al. JAMA Intern Med. 2018;178(8):1078-1085.</div>
-					</div>
-					<a
-						data-wf--button--variant="button-primary-icon"
-						data-w-id="d102baf6-0bbf-4311-9c79-6b424f8fe8a7"
-						href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2686144"
-						target="_blank"
-						rel="noopener"
-						class="button-black w-variant-09a8aa78-1706-dbeb-3558-a2bb5a334aee w-inline-block">
-						<div
-							class="button-left-icon w-variant-09a8aa78-1706-dbeb-3558-a2bb5a334aee"></div>
-						<div
-							class="button-hover w-variant-09a8aa78-1706-dbeb-3558-a2bb5a334aee"></div>
-						<div class="button-text w-variant-09a8aa78-1706-dbeb-3558-a2bb5a334aee">
-							Read the study ↗
-						</div>
-					</a>
-				</div>
-			</div>
-		</section>
-		<section class="review-section section-spacing-bottom">
+		<section class="our-vision-section section-spacing" id="closed-system">
+			<style>
+				#closed-system .section-title p { max-width: 720px; margin-left: auto; margin-right: auto; font-size: 1.1rem; line-height: 1.65; }
+				#closed-system .grid-our-vision { grid-template-columns: 1fr 1fr; }
+				#closed-system .lc-cs-card { background-image: linear-gradient(rgba(12, 17, 30, 0.9), rgba(12, 17, 30, 0.9)), url(assets/Images/oil_bubble_macro.webp); background-position: 0 0, 50%; background-size: auto, cover; background-repeat: repeat, no-repeat; }
+				#closed-system .lc-cs-svg { flex: none; width: 88px; height: 88px; padding: 10px; border-radius: 24px; background: radial-gradient(circle at 30% 20%, rgba(124, 196, 242, 0.35), rgba(2, 112, 204, 0.12) 70%); border: 1px solid rgba(191, 227, 255, 0.35); box-shadow: 0 12px 30px -12px rgba(2, 112, 204, 0.8), inset 0 0 20px rgba(191, 227, 255, 0.12); transition: transform 0.4s ease; }
+				#closed-system .lc-cs-card:hover .lc-cs-svg { transform: translateY(-4px) rotate(-3deg); }
+				@media (max-width: 767px) { #closed-system .grid-our-vision { grid-template-columns: 1fr; } }
+			</style>
 			<div class="container-medium">
 				<div class="section-title text-center">
-					<p class="lc-eyebrow">One device, several roles</p>
-					<h2
-						data-w-id="ae4e11cf-871d-3e0c-7d8c-d5a084cbaf74"
-						style="opacity: 0"
-						class="no-margin-bottom">
-						What it stands in for
-					</h2>
-					<p>
-						The Lotus No-Balloon Catheter takes over the work of three older devices,
-						all without a balloon.
-					</p>
+					<h3>Closed Lotus Catheter System</h3>
+					<p class="no-margin-bottom">The Lotus Catheter comes as part of a complete kit, already attached to a bedside urine bag or leg bag. The junction is sealed with a plastic covering, which the healthcare provider may remove if desired.</p>
 				</div>
-				<div class="w-layout-grid grid-review">
-					<div
-						data-w-id="57711caf-9b3c-3952-f162-4df4a6076bc9"
-						style="opacity: 0">
-						<div
-							data-wf--review-item--variant="review-item-01"
-							class="review-item">
-							<div class="review-author">
-								<div class="review-author-detail">
-									<h3 class="review-author-name">Nights of uninterrupted sleep</h3>
-									<div class="review-author-position">
-										Takes the place of a straight catheter
-									</div>
-								</div>
-							</div>
-							<p class="review-content">
-								People using intermittent straight catheters often wake several times a
-								night to catheterize again, which wrecks sleep and quality of life.
-								Lotus is FDA-cleared for intermittent catheterization and works through
-								a self-contained bellows mechanism, with no balloon or syringe, so
-								patients can use it at home as an indwelling catheter.
-							</p>
+				<div class="w-layout-grid grid-our-vision">
+					<div class="our-vision-item lc-cs-card">
+						<div class="our-vision-top"><svg class="lc-cs-svg" viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="lcg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe3ff"/><stop offset="1" stop-color="#0270CC"/></linearGradient></defs><rect x="14" y="26" width="44" height="34" rx="6" fill="url(#lcg1)" fill-opacity="0.28" stroke="url(#lcg1)" stroke-width="2.4"/><path d="M8 60h56" stroke="#bfe3ff" stroke-width="2.4" stroke-linecap="round"/><rect x="22" y="34" width="6" height="6" rx="1.5" fill="#bfe3ff"/><rect x="44" y="34" width="6" height="6" rx="1.5" fill="#bfe3ff"/><rect x="22" y="45" width="6" height="6" rx="1.5" fill="#bfe3ff"/><rect x="44" y="45" width="6" height="6" rx="1.5" fill="#bfe3ff"/><path d="M31 60V50a5 5 0 0 1 10 0v10" fill="#0270CC" stroke="#bfe3ff" stroke-width="2"/><circle cx="36" cy="16" r="11" fill="#0270CC" stroke="#bfe3ff" stroke-width="2.4"/><path d="M36 10.5v11M30.5 16h11" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg><h3 class="our-vision-title">In hospitals</h3></div>
+						<p class="our-vision-description">Used mainly by the Armed Forces and in operating rooms, to prevent possible contamination of the catheter by the healthcare provider.</p>
+					</div>
+					<div class="our-vision-item lc-cs-card">
+						<div class="our-vision-top"><svg class="lc-cs-svg" viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="lcg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe3ff"/><stop offset="1" stop-color="#0270CC"/></linearGradient></defs><path d="M10 34 36 12l26 22" fill="none" stroke="#bfe3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 31v27a3 3 0 0 0 3 3h32a3 3 0 0 0 3-3V31L36 15Z" fill="url(#lcg2)" fill-opacity="0.28" stroke="url(#lcg2)" stroke-width="2.4" stroke-linejoin="round"/><path d="M36 52s-11-6.3-11-14.2a6.2 6.2 0 0 1 11-3.8 6.2 6.2 0 0 1 11 3.8C47 45.7 36 52 36 52Z" fill="#0270CC" stroke="#bfe3ff" stroke-width="2.2" stroke-linejoin="round"/><path d="M47 20V12h6v13" fill="none" stroke="#bfe3ff" stroke-width="2.4" stroke-linejoin="round"/></svg><h3 class="our-vision-title">At home</h3></div>
+						<p class="our-vision-description">Prevents possible contamination by the patient. A healthcare provider would prescribe it for certain immunocompromised patients or as part of CAUTI management.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="work-prosses-section section-spacing" id="specialty">
+			<style>
+				#specialty .grid-work-process { align-items: start; }
+				#specialty .work-process-left { position: sticky; top: 7rem; gap: 2rem; justify-content: flex-start; }
+				#specialty .lc-sp-content { height: 0; transition: height 0.45s ease; }
+				#specialty .lc-sp-item.lc-open .lc-sp-content { height: auto; }
+				#specialty .lc-sp-inner { padding: 0 1.25rem 1.5rem; color: var(--color--gray-3); line-height: 1.7; }
+				#specialty .accordion-line-vr { transition: opacity 0.3s ease; }
+				#specialty .lc-sp-item.lc-open .accordion-line-vr { opacity: 0; }
+				#specialty .work-accordion-heading:focus-visible { outline: 2px solid #0270CC; outline-offset: -2px; border-radius: 12px; }
+				@media (max-width: 991px) { #specialty .work-process-left { position: static; } }
+			</style>
+			<div class="container-medium">
+				<div class="w-layout-grid grid-work-process">
+					<div class="work-process-left">
+						<div class="work-process-top"><h2 class="process-title">Specialty Lotus Catheters</h2></div>
+						<div class="work-process-info">
+							<a data-wf--button--variant="button-primary-small" href="#contact" class="button-black w-inline-block">
+								<div class="button-left-icon"></div><div class="button-hover"></div><div class="button-text">Contact us</div>
+							</a>
 						</div>
 					</div>
-					<div
-						data-w-id="b87442c2-a950-d0d8-abac-617a4f9f81dd"
-						style="opacity: 0">
-						<div
-							data-wf--review-item--variant="review-item-01"
-							class="review-item">
-							<div class="review-author">
-								<div class="review-author-detail">
-									<h3 class="review-author-name">Staying in place without harm</h3>
-									<div class="review-author-position">
-										Takes the place of a Foley catheter
-									</div>
-								</div>
+					<div class="work-process-wrapper">
+						<div class="work-accordion-item lc-sp-item lc-open">
+							<div class="work-accordion-heading" role="button" tabindex="0" aria-expanded="true">
+								<div class="accordion-title-wrap"><h3 class="work-accordion-title">01.</h3><h3 class="work-accordion-title">Two Way Lotus Catheter</h3></div>
+								<div class="accordion-icon-wrap"><img src="assets/Images/horizontalline.svg" alt="" class="accordion-line-hr" /><img src="assets/Images/verticalline.svg" alt="" class="accordion-line-vr" /></div>
 							</div>
-							<p class="review-content">
-								A Foley balloon bears on the trigone and bladder neck while its tip
-								bears on the bladder dome, leading to granuloma, retained urine, bladder
-								spasm and the conditions behind catheter-associated infections (CAUTI).
-								Lotus drops the balloon completely and anchors with soft, deployable
-								wings that rest gently, without pressing on or irritating the trigone
-								and bladder neck. In the clinical study, drainage was nearly complete,
-								with a mean post-void residual of only 4.8 mL.
-							</p>
+							<div class="work-accordion-content lc-sp-content">
+								<div class="lc-sp-inner"><p class="no-margin-bottom">Equivalent to the Three Way Foley Catheter. The Foley uses one channel to inflate the balloon, one for irrigation with glycine isotonic solution, and one to drain the mixed fluids and blood. Since the Lotus has no balloon, it needs only two: one to inject glycine isotonic solution to irrigate the bladder after prostate or bladder endoscopic (or rarely open) surgery, and one to drain the bladder.</p></div>
+							</div>
+						</div>
+						<div class="work-accordion-item lc-sp-item">
+							<div class="work-accordion-heading" role="button" tabindex="0" aria-expanded="false">
+								<div class="accordion-title-wrap"><h3 class="work-accordion-title">02.</h3><h3 class="work-accordion-title">Council Tip Lotus Catheter</h3></div>
+								<div class="accordion-icon-wrap"><img src="assets/Images/horizontalline.svg" alt="" class="accordion-line-hr" /><img src="assets/Images/verticalline.svg" alt="" class="accordion-line-vr" /></div>
+							</div>
+							<div class="work-accordion-content lc-sp-content">
+								<div class="lc-sp-inner"><p class="no-margin-bottom">Very similar to the Foley Council Tip. A side channel feeds into the lumen, open at the very tip. It is used after endoscopic dilatation of the urethra in urethral stricture. A guide wire is inserted endoscopically from the external meatus to the bladder and threaded through the tip channel. The Lotus Catheter, preferably two French sizes smaller than the maximum dilator used, is then threaded along the wire until the wings are 2.5-5.0 cm above the trigone or bladder neck, as confirmed endoscopically by the urologist.</p></div>
+							</div>
+						</div>
+						<div class="work-accordion-item lc-sp-item">
+							<div class="work-accordion-heading" role="button" tabindex="0" aria-expanded="false">
+								<div class="accordion-title-wrap"><h3 class="work-accordion-title">03.</h3><h3 class="work-accordion-title">Coudé Lotus Catheter</h3></div>
+								<div class="accordion-icon-wrap"><img src="assets/Images/horizontalline.svg" alt="" class="accordion-line-hr" /><img src="assets/Images/verticalline.svg" alt="" class="accordion-line-vr" /></div>
+							</div>
+							<div class="work-accordion-content lc-sp-content">
+								<div class="lc-sp-inner"><p class="no-margin-bottom">Very similar to the Coudé Foley Catheter. The tip is angled 25-30 degrees up from the shaft. It is used by urologists in patients with median lobe prostatic enlargement, which is otherwise very difficult to negotiate with a straight tip.</p></div>
+							</div>
+						</div>
+						<div class="work-accordion-item lc-sp-item">
+							<div class="work-accordion-heading" role="button" tabindex="0" aria-expanded="false">
+								<div class="accordion-title-wrap"><h3 class="work-accordion-title">04.</h3><h3 class="work-accordion-title">Specialty Nephrostomy Lotus Catheter</h3></div>
+								<div class="accordion-icon-wrap"><img src="assets/Images/horizontalline.svg" alt="" class="accordion-line-hr" /><img src="assets/Images/verticalline.svg" alt="" class="accordion-line-vr" /></div>
+							</div>
+							<div class="work-accordion-content lc-sp-content">
+								<div class="lc-sp-inner"><p class="no-margin-bottom">In an acute or chronic surgically created nephrostomy channel, a Council Tip Lotus Catheter is threaded under fluoroscopy along the track to the renal pelvis. When a JJ stent is present (one J in the renal pelvis and the other at the ureteral orifice in the bladder), three wings are more likely to dislodge it. A Two Wing Council Tip Catheter, called by urologists the Specialty Nephrostomy Council Catheter, is preferred. The wings are deployed and closed under fluoroscopy and steered clear of the JJ stent.</p></div>
+							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<script>
+				(function () {
+					var root = document.getElementById("specialty");
+					if (!root) return;
+					var items = root.querySelectorAll(".lc-sp-item");
+					function setH(it) {
+						var c = it.querySelector(".lc-sp-content");
+						c.style.height = it.classList.contains("lc-open") ? c.scrollHeight + "px" : "0px";
+					}
+					items.forEach(function (it) {
+						var h = it.querySelector(".work-accordion-heading");
+						function toggle() {
+							it.classList.toggle("lc-open");
+							h.setAttribute("aria-expanded", it.classList.contains("lc-open"));
+							setH(it);
+						}
+						h.addEventListener("click", toggle);
+						h.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+						setH(it);
+					});
+					window.addEventListener("resize", function () { items.forEach(setH); });
+					window.addEventListener("load", function () { items.forEach(setH); });
+				})();
+			</script>
+		</section>
+		<section class="our-mission-section section-spacing" id="clinical-endorsement">
+			<div class="container-medium">
+				<h3 class="our-mission-content">Clinical Evidence and Endorsement</h3>
+				<div class="w-layout-grid grid-our-mission">
+					<img src="assets/Images/liquid_glass_transparent.webp" loading="lazy" alt="Decoration" class="decoration-03" />
+					<div class="our-mission-item">
+						<div class="w-layout-grid grid-mission">
+							<p class="our-mission-description">Professor Jorge Lockhart, Professor and Chair of Urology at the University of South Florida, was the lead supporter of the Lotus Catheter. He and his team conducted an independent prospective clinical trial on 50 patients in 2016, showing the Lotus Catheter is simpler, safer, and has no residual urine. None of the 50 patients developed any CAUTI. The study was published in the Journal of Urology and Renal Diseases on February 27, 2017.</p>
+							<p class="our-mission-description">Professor Roger C. L. Feneley, an internationally renowned urologist from the UK, wrote his well-known article on the urgent need to find an alternative to the Foley Catheter, supported by over 100 credible urology references. He endorsed the Lotus Catheter as the answer to the ideal urinary catheter described in that article, and plans were laid for a multicenter comparative study in the UK. Unfortunately, Professor Feneley passed away before the study could be conducted.</p>
+						</div>
+						<div class="mission-divider"></div>
+						<div class="our-mission-client"><div>Journal of Urology and Renal Diseases · February 27, 2017</div></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="graph-section" id="patents">
+			<style>
+				#patents { position: relative; overflow: hidden; }
+				#patents .container-medium { position: relative; z-index: 1; }
+				#patents .grid-graph { grid-template-columns: 1fr; }
+				#patents .graph-counter-items { max-width: 780px; }
+				#patents .graph-image { position: absolute; right: -60px; top: 3rem; width: 720px; max-width: none; height: 270px; margin-top: 0; opacity: 0.45; pointer-events: none; }
+				@media (max-width: 991px) { #patents .graph-image { display: none; } }
+				#patents .lc-pat-item { align-items: center; gap: 1.5rem; padding-right: 1.25rem; }
+				#patents .lc-pat-item .counter-count-wrap { flex: none; min-width: 9.5rem; }
+				#patents .lc-pat-item .graph-counter-title { margin: 0; }
+				@media (max-width: 767px) { #patents .lc-pat-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; } }
+			</style>
+			<div class="container-medium">
+				<div class="section-title graph-title-wrap">
+					<h2 class="graph-title">Patents and Protection</h2>
+				</div>
+				<div class="w-layout-grid grid-graph">
+					<div class="graph-counter-items">
+						<div class="graph-counter-item lc-pat-item">
+							<div class="counter-count-wrap"><h2 class="counter-count-number graph-counter">5,569,219</h2></div>
+							<div class="graph-counter-title">US Patent 5,569,219 (October 29, 1996), Collapsible Catheter</div>
+						</div>
+						<div class="graph-counter-item lc-pat-item">
+							<div class="counter-count-wrap"><h2 class="counter-count-number graph-counter">7,264,609</h2></div>
+							<div class="graph-counter-title">US Patent 7,264,609 (September 4, 2007), No Balloon Catheter</div>
+						</div>
+						<div class="graph-counter-item lc-pat-item">
+							<div class="counter-count-wrap"><h2 class="counter-count-number graph-counter">2045</h2></div>
+							<div class="graph-counter-title">International patent (PCT, Patent Cooperation Treaty) protection until November 19, 2045</div>
+						</div>
+					</div>
+					<img src="assets/Images/lines.svg" loading="lazy" alt="" class="graph-image" />
+				</div>
+			</div>
+		</section>
+		<style id="lc-white-split">
+			.lc-split-white { background-color: #fff; }
+			.lc-split-white .lc-eyebrow { color: #0270CC; }
+			.lc-split-white .split-hero-title { color: #0c111e; font-size: clamp(1.9rem, 3vw, 2.6rem) !important; line-height: 1.15 !important; margin-top: 0.4rem; }
+			.lc-split-white .split-hero-description, .lc-split-white .split-hero-content { color: #26324a; }
+			.lc-split-white .split-hero-content p { line-height: 1.7; }
+			#training .split-hero-content { max-width: 760px; }
+			#training .split-hero-left { padding-top: 0; padding-bottom: 0; grid-row-gap: 1.75rem; }
+			#training .split-hero-top { margin-bottom: 0; }
+			#training .split-hero-bottom { flex-direction: column; align-items: center; text-align: center; }
+			#training .split-hero-bottom { grid-row-gap: 1rem; row-gap: 1rem; }
+			#training .split-hero-left { grid-row-gap: 0.5rem; row-gap: 0.5rem; }
+			#training .split-hero-top { justify-content: center; text-align: center; }
+			#training .split-hero-top > * { width: 100%; }
+			#training .split-hero { justify-content: center; width: auto; max-width: none; margin: 0 auto; }
+			#training .split-hero-content { align-items: center; margin: 0 auto; }
+			#training .container { padding-top: 6rem; padding-bottom: 6rem; }
+			.lc-split-white .split-hero-decoration { width: 110px; height: 110px; flex: none; }
+			#contact { margin-top: 4rem; }
+			.lc-split-white .lc-sign { color: #0f1f3d; font-weight: 600; }
+		</style>
+		<section
+			class="split-hero-section lc-split-white"
+			id="training">
+			<div class="container">
+				<div class="w-layout-grid grid-split-hero" style="grid-template-columns: 1fr">
 					<div
-						id="w-node-_26a4390b-e7e7-7041-f4e7-b70155f216cd-1f421fd7"
-						data-w-id="26a4390b-e7e7-7041-f4e7-b70155f216cd"
-						style="opacity: 0">
-						<div
-							data-wf--review-item--variant="review-item-01"
-							class="review-item">
-							<div class="review-author">
-								<div class="review-author-detail">
-									<h3 class="review-author-name">Simpler from the outset</h3>
-									<div class="review-author-position">
-										Takes the place of a Malecot catheter
-									</div>
-								</div>
+						id="w-node-d6081372-f2de-3d9f-aefd-304b621a5ab3-1f421fe3"
+						class="split-hero-left">
+						<div class="split-hero-top">
+							<p class="lc-eyebrow">Lotus Catheter</p>
+							<h1
+								class="split-hero-title"
+								style="font-size: 1.85rem; line-height: 1.3">
+								Training and Certification Program
+							</h1>
+							<div class="split-hero">
+							
+								<p class="split-hero-description">
+									Instructions for Use and Indications for Use
+								</p>
 							</div>
-							<p class="review-content">
-								The Malecot needs a stiff metal or plastic introducer to change the 3-4
-								wing or flower configuration to a straight catheter to pass through a
-								created hole surgically. Lotus carries FDA clearance for the same
-								indications, and its self-contained bellows mechanism removes any need
-								for stylets.
-							</p>
+						</div>
+						<div class="split-hero-bottom">
+							
+							<div class="split-hero-content">
+<p class="no-margin-bottom">A trained team on the Lotus Catheter will be introduced to your institution to ensure the FDA-ordered Instructions for Use and Indications for Use are passed on to all your healthcare providers. Once your medical staff is well versed in its use, each healthcare provider will receive a Certificate of Completion of Training on the Lotus Catheter. Each person trained is then eligible to teach other healthcare providers.</p>
+</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<section
-			class="split-hero-section"
-			id="inventor">
+			class="split-hero-section lc-split-white"
+			id="inventor-message">
 			<div class="container">
 				<div class="w-layout-grid grid-split-hero">
 					<div
 						id="w-node-d6081372-f2de-3d9f-aefd-304b621a5ab3-1f421fe3"
 						class="split-hero-left">
 						<div class="split-hero-top">
-							<p class="lc-eyebrow">The Inventor</p>
+							<p class="lc-eyebrow">Message from the Inventor</p>
 							<h1
 								class="split-hero-title"
 								style="font-size: 1.85rem; line-height: 1.3">
-								Dr. Said I. Hakki, MD, PhD
+								A Message from the Inventor / Join Us
 							</h1>
 							<div class="split-hero">
 								<div class="hero-round-1">
@@ -2924,26 +2355,17 @@
 								alt="decoration"
 								class="split-hero-decoration" />
 							<div class="split-hero-content">
-								<p class="no-margin-bottom">
-									A urologist and medical-device inventor of international standing, with
-									more than five decades of clinical practice. In the early 1980s Dr.
-									Hakki patented an inflatable penile prosthesis that American Medical
-									Systems (AMS) acquired, later part of Pfizer, Endo and Boston
-									Scientific; it is estimated to have brought in $1.9 billion in
-									cumulative revenue and restored sexual function for hundreds of
-									thousands of men worldwide. The Lotus Catheter is his next step: a
-									balloon-free design shaped by tens of thousands of patient interactions
-									and a lifelong belief that the Foley's retention mechanism was needless
-									harm.
-								</p>
-							</div>
+<p class="no-margin-bottom">Over the next few years, the hardest task for the Lotus Catheter is yet to come: clinically proving that the Lotus Catheter is Simpler, Safer, and Superior compared to the Foley Catheter. This monumental task needs to come from my medical, surgical and urology colleagues worldwide. Their continued support and advice are of utmost importance. Without their help, the Lotus Catheter will not become the standard of care in urology.</p>
+<p class="no-margin-bottom">I would like to hear from you during your clinical application or clinical trials. Any suggestions and ideas are more than welcome. Any critical note will be taken seriously into consideration and immediately corrected. After all, our objective is one and the same: to provide our patients with the best care, using the best tools we can provide.</p>
+<p class="no-margin-bottom lc-sign">— Said Ismail Hakki, M.D., Ph.D., Inventor</p>
+</div>
 						</div>
 					</div>
 					<div
 						class="split-hero-right"
 						style="
 							background-image:
-								linear-gradient(#1c0b20cc, #1c0b2080),
+								linear-gradient(#0b1520cc, #0b152080),
 								url(&quot;https://images.squarespace-cdn.com/content/67bb295c3f57c626fa30bdd8/02297960-bdcf-4446-9db0-868471fbcc4d/CE7725F3-32B0-4BB5-84A4-0E1BC2F322AE+%282%29.jpeg?content-type=image%2Fjpeg&quot;);
 							background-position: 50% 20%;
 							background-repeat: no-repeat;
@@ -2952,7 +2374,7 @@
 						<div class="w-layout-grid hero-right-bottom">
 							<div class="hero-overlay"></div>
 							<div
-								id="inventor-video-trigger"
+								data-lc-video="inventor"
 								class="hero-background-video w-inline-block"
 								style="cursor: pointer">
 								<img
@@ -2974,6 +2396,34 @@
 				</div>
 			</div>
 		</section>
+
+		<div id="lc-video-modal" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center; padding: 2rem">
+			<div style="width: 100%; max-width: 960px">
+				<div style="text-align: right; margin-bottom: 0.75rem"><button id="lc-video-close" type="button" aria-label="Close video" style="background: none; border: 1px solid rgba(255, 255, 255, 0.4); color: #fff; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; font-size: 1rem">✕</button></div>
+				<video id="lc-video-el" controls playsinline style="width: 100%; max-height: 78vh; border-radius: 12px; background: #000"></video>
+				<div style="color: #fff; margin-top: 1rem; text-align: center"><h3 id="lc-video-title" style="margin-bottom: 0.4rem"></h3></div>
+			</div>
+		</div>
+		<script>
+			(function () {
+				var videos = {
+					inventor: { src: "https://cdn.jumpshare.com/preview/XXFzCWuesSfBIbEnaMUoAm5TCZOi2jofKcATH7b9PJJdsgKvKlVeF3euraYyGWOK4Qilok8OfBn94n-haUoMk6BmAbzCtA27GKCDjn0lTEkqVqxCxOIhgg_4z41V3t-HwqdFLLzDCD4nRCiH62ZpPm6yjbN-I2pg_cnoHs_AmgI.mp4", title: "Dr. Hakki on what sets Lotus apart" }
+				};
+				var modal = document.getElementById("lc-video-modal"), video = document.getElementById("lc-video-el"), title = document.getElementById("lc-video-title"), closeBtn = document.getElementById("lc-video-close");
+				function openV(key) { var v = videos[key]; if (!v) return; video.src = v.src; title.textContent = v.title; modal.style.display = "flex"; document.body.style.overflow = "hidden"; video.play().catch(function () {}); }
+				function closeV() { modal.style.display = "none"; video.pause(); video.removeAttribute("src"); video.load(); document.body.style.overflow = ""; }
+				document.querySelectorAll("[data-lc-video]").forEach(function (t) { t.addEventListener("click", function () { openV(t.getAttribute("data-lc-video")); }); });
+				closeBtn.addEventListener("click", closeV);
+				modal.addEventListener("click", function (e) { if (e.target === modal) closeV(); });
+				document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeV(); });
+			})();
+		</script>
+
+
+
+
+	
+	
 
 		<style>
 			.lc-doc-section {
@@ -3080,951 +2530,9 @@
 			}
 		</style>
 
-		<section
-			class="lc-doc-section"
-			id="historical-review">
-			<div class="container-medium">
-				<div class="lc-doc-card">
-					<h2 class="lc-doc-title">Historical Review</h2>
-					<p class="lc-doc-date">September 1, 2026</p>
-					<p class="lc-doc-p">
-						From the very early days of my training as a urologist at the Hammersmith
-						Hospital, the Royal Postgraduate Medical School, the Institute of Urology
-						and St. Peter’s Hospitals in London, England my teachers, my colleagues
-						and I, became aware of the cost, morbidity and mortality associated with
-						the use of the Foley balloon Catheter. My urology training was later
-						refined in the US at the University of South Florida and at Bay Pines VA
-						Medical Center in Florida as a Professor of Urology.
-					</p>
-					<p class="lc-doc-p">
-						The first prototype of the Lotus Catheter was built when the first US
-						patent was issued in 1996. Over the next 20 years continued research &amp;
-						development refined this invention. Professor Jorge Lockhart at the
-						University of South Florida was the lead support of the Lotus Catheter.
-						Professor Lockhart and his team at the University of South Florida (USF)
-						conducted an independent prospective clinical trial on 50 patients
-						providing evidence of a simpler, safer and superior Lotus Catheter.
-					</p>
-					<p class="lc-doc-p">
-						Professor Roger C. L. Feneley an internationally renowned urologist from
-						the UK wrote his famous article (attached) on the urgent need to find an
-						alternative catheter to the Foley Catheter. This important milestone
-						article was supported by over 100 credible urology articles calling to
-						find a better alternative to the Foley Catheter.
-					</p>
-					<p class="lc-doc-p">
-						In May 2020, the FDA cleared the Lotus Catheter for multiple uses. Namely,
-						the use as a Foley Catheter, as a Malecot Catheter, and also as a Straight
-						Catheter. The Lotus Catheter is protected by an international Patent (PCT,
-						Patent Cooperation Treaty) until November 19, 2045. Over the next few
-						years, the hardest task for the Lotus Catheter is yet to come. Clinically
-						prove the Lotus Catheter is Simpler, Safer, and Superior in comparison to
-						the Foley Catheter. This monumental task needs to come from my medical,
-						surgical and urology colleagues worldwide. Their continued support and
-						advice are of utmost importance. Without their help and support, the Lotus
-						Catheter will not become the standard of care in urology.
-					</p>
-					<p class="lc-doc-p">
-						Below is a summary of the differences between the Lotus Catheter and the
-						Foley Catheter. A trained Team on the Lotus Catheter will be introduced to
-						your institution to ensure the Instructions for use and the indications
-						For Use as ordered by the FDA are both passed on to all your healthcare
-						providers.
-					</p>
-					<p class="lc-doc-p">
-						Once, the Medical Staff at your institution is well versed with the use of
-						Lotus Catheter. Each healthcare provider will receive a Certificate of
-						Completion of the Training on the use of the Lotus Catheter. Each of those
-						trained would be eligible to teach other healthcare providers on the use
-						of the Lotus Catheter.
-					</p>
-					<p class="lc-doc-p">
-						Finally, I would like to hear from you during your clinical application or
-						clinical trials. Any suggestions and any ideas are more than welcome. Any
-						critical note will seriously be taken into consideration and immediately
-						corrected. After all, our main objective and goal is one and the same.
-						That is to provide our patients with the best care and using the best
-						tools we can provide.
-					</p>
-					<p class="lc-doc-sign">
-						<strong>Said Ismail Hakki, M.D., Ph.D.</strong><br />Inventor
-					</p>
-					<p class="lc-doc-ref">
-						*Journal of Medical Engineering &amp; Technology<br />J Med Eng Technol
-						2015 November 17: 39 (38): 459-470
-					</p>
-				</div>
-			</div>
-		</section>
 
-		<section
-			class="lc-doc-section lc-doc-alt"
-			id="foley-vs-lotus">
-			<div class="container-medium">
-				<p class="lc-doc-ref">
-					Urinary Catheters: history, current status, adverse events and research
-					agenda.<br />Roger C. L. Feneley, Ian B. Hopley, &amp; Peter N. T. Wells.
-				</p>
-				<h2
-					class="lc-doc-title"
-					style="margin-top: 1rem">
-					Comparison between the Foley balloon catheter and the Lotus catheter
-				</h2>
-				<div class="lc-doc-grid">
-					<div class="lc-doc-col foley">
-						<h3 class="lc-doc-h3">I- Foley Balloon Catheter</h3>
-						<p class="lc-doc-p lc-doc-bold">FDA Approved Indication for Use:</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">A-</strong> Urinary bladder drainage and or
-							irrigation through the urethra.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">1-</strong> The Foley Catheter is stabilized
-							inside the urinary bladder using an inflatable balloon filled with
-							5cc-30cc sterile water. The water is non-compressible. The diameter of
-							this non compressible balloon ranges between 2.5-centimeters- 4.5
-							centimeters (one inch-1.77 inch).
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">2-</strong> This balloon inflated with
-							sterile water weighs approximately 5.0 grams -30 grams sits on the most
-							sensitive part of the urinary bladder i.e. trigone and the bladder neck.
-							This balloon is the sole stabilizer that keeps the Foley catheter
-							indwelling inside the urinary bladder. The external stabilizer used to
-							adhere the Foley catheter to the inner side of the thigh using special
-							stabilizer or cross strong adhesive tape is to prevent continued friction
-							of the inflated balloon against the most sensitive part of the bladder.
-							This stabilizer is also used to prevent a confused or demented patient
-							forcibly removing the Foley catheter with the balloon fully inflated.
-							Thus causing immediate and lasting damage.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">3-</strong> The Foley catheter’s two
-							drainage ports are located at the tip of the Foley catheter above the
-							balloon. This tip is about 2.5-centimeter -3.5 centimeter long. Due to
-							the high location of the drainage port. There is residual urine ranging
-							between 10-100cc inside the urinary bladder at all times, Roger C.L.
-							Feneley et al.
-						</p>
-						<p class="lc-doc-p">
-							It is well known that the first sensation to urinate starts when there is
-							50 cc. of urine in the bladder. Therefore, the presence of an inflated
-							balloon (5.0 cc-30 cc), plus residual urine averaging 30 cc- 50 cc. Most
-							patients sense the urge to urinate as long as the Foley catheter is
-							indwelling causing painful bladder spasm that necessitates the
-							administration of antispasmodic medication, and at time analgesic
-							medication.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">4-</strong> The tip of the Foley catheter
-							housing the 2 drainage ports is usually 2.5 centimeters-4.5 centimeters
-							long. This tip rests on the balloon which is filled with non-compressible
-							fluid (water). This tip pushes against the dome of the bladder upon which
-							all bowels rest. Thus, within 24-48 hours 100 % of all patients with an
-							indwelling Foley catheter develops catheter granuloma. Microscopically
-							all catheter granulomas contain acute as well as chronic inflammatory
-							cells.
-						</p>
-						<p class="lc-doc-p">
-							In summary, the combination of high residual urine, with the balloon of
-							the Foley catheter constantly irritating the trigone and bladder neck,
-							with tip of the Foley catheter pushing against the dome developing
-							microscopic evidence of acute/chronic inflammatory cells (cystitis) as
-							seen endoscopically in every single case with an indwelling Foley
-							catheter. Thus, there are many factors in the Foley balloon catheter that
-							causes infection, CAUTI (Catheter Associated Urinary Tract Infection) in
-							patients. This CAUTI results in staggering cost, morbidity and even
-							mortality, Roger C. L. Feneley et al.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">5-</strong> The force needed to dislodge the
-							Foley catheter with the balloon fully inflated ranges between 5 Pounds-
-							50 Pounds (2.268 kilogram- 20.26 kilogram force). This is not an uncommon
-							incidence. This may cause severe bleeding and tear of the bladder neck
-							and urethra with immediate and late complications.
-						</p>
-					</div>
-					<div class="lc-doc-col lotus">
-						<h3 class="lc-doc-h3">II- Lotus No Balloon Catheter</h3>
-						<p class="lc-doc-p lc-doc-bold">FDA Approved Indication For Use:</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">A-</strong> Urinary bladder drainage and
-							irrigation as in a Foley Catheter.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">B-</strong> Suprapubic Cystostomy and
-							Nephrostomy drainage and irrigation as in a Malecot Catheter.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">C-</strong> Clean Intermittent
-							Catheterization as in a Straight Catheter.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">1-</strong> The 2-3 wing flower
-							configuration of the Lotus Catheter is made of rubber polymer (Silicone,
-							TPU, PVC, and Latex).
-						</p>
-						<p class="lc-doc-p">
-							This rubber polymer is compressible and collapsible. In addition, the tip
-							of the Lotus Catheter is only 0.5 centimeters in length and sits on the
-							2-3 wing compressible collapsible rubber. Furthermore, there is no
-							residual urine in patients with the Lotus Catheter indwelling. Most
-							importantly, the 2-3 wing configuration does not sit on the most
-							sensitive part of the bladder ie trigone and bladder neck.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">2-</strong> The 2-3 wing flower
-							configuration is not the primary stabilizer keeping the Lotus Catheter
-							indwelling. It is a backup. The primary stability for the Lotus Catheter
-							is firm adherence to the medial side of the patient’s thigh using special
-							Lotus Stabilizer or cross firm adhesive tape.
-						</p>
-						<p class="lc-doc-p">
-							<strong class="lc-doc-label">3-</strong> The force needed to dislodge the
-							fully deployed 2-3 wing flower configuration is 2-3 Pound (0.90 kilogram-
-							1.36 kilogram). The reason is the collapsible rubber polymer of the 2-3
-							wing flower configuration. Minimal or no injury occurs in accidental pull
-							of the Lotus Catheter with the 2-3 wings fully deployed.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section
-			class="lc-doc-section"
-			id="urinary-catheters">
-			<div class="container-medium">
-				<h2 class="lc-doc-title">Urinary Catheters</h2>
-				<p class="lc-doc-p">
-					There are Four Urinary Catheters in the field of medicine worldwide. Each
-					catheter has an FDA distinctive and a specific instructions for use.
-				</p>
-				<div class="lc-doc-block">
-					<h3 class="lc-doc-h3">1- The Foley Balloon Catheter</h3>
-					<p class="lc-doc-p lc-doc-fda">
-						<strong class="lc-doc-label">FDA Indications for Use:</strong> Continuous
-						Urinary Bladder Drainage and Or Irrigation Through the urethra.
-					</p>
-					<p class="lc-doc-p">
-						The Foley Catheter has been with us for about 100 years now. It is a
-						catheter with a balloon to be inflated using sterile water via a side
-						channel. The average inflation of the balloon is 10-30 cc of sterile
-						water. The average inflated Foley balloon thus weighs 10-30 grams.
-					</p>
-					<p class="lc-doc-p">
-						The balloon acts as stabilizing force to keep the Foley Catheter
-						indwelling inside the urinary bladder for continuous drainage and or
-						irrigation of the bladder. This 10-30 grams of non distensible fluid sit
-						on the most sensitive part of the urinary bladder. The trigone and bladder
-						neck causing continuous painful spasm as long as the catheter is
-						indwelling, Continuous medication is usually necessary to alleviate the
-						pain and discomfort the patient usually experiences. Accidental pull out
-						of the Foley Catheter with the balloon fully inflated is not rare. The
-						force needed to pull through the Foley with the balloon fully inflated is
-						anywhere between, 10-50 Pounds force. Such force may partially or
-						completely destroy the internal sphincter mechanism of the urinary bladder
-						leading to partial or complete incontinence. It is for all such reasons
-						the Foley Catheter Standard of Care is to stabilize the Foley Catheter by
-						firmly attaching the Foley Catheter to the inner side of the patient’s
-						thigh using adhesive tape, Velcro or an adhesive stabilizer specific to
-						the Foley Catheter.
-					</p>
-					<p class="lc-doc-p">
-						The presence of the drainage holes above the balloon usually lead to the
-						presence of 10c-100cc of residual urine, Roger C.L. Feneley. Residual
-						urine is the main cause of CAUTI (Catheter Associated Urinary Tract
-						Infection). Not only that, such residual urine with the weight of the
-						fully inflated balloon would give the patients a continuous sense of
-						urgency to urinate. Uncontrolled urine may leak around the Foley Catheter
-						soiling the patient, his clothes and his surroundings.
-					</p>
-					<h4 class="lc-doc-h4">Conclusion:</h4>
-					<p class="lc-doc-p">
-						The balloon of the Foley Catheter filled at least with 10cc-30cc of
-						non-distensible sterile water acts as the stabilizer preventing the Foley
-						Catheter from slippage while indwelling inside the bladder. The balloon
-						uses the most sensitive and important part of the urinary bladder as a
-						stabilizer. Namely, the Trigone and bladder neck as the stabilizer. The
-						standard of care to stabilize the Foley Catheter by using an adhesive tape
-						or special adhesive stabilizer specific for the Foley Catheter fixed to
-						the inner side of the patient’s thigh is merely protective. This is to
-						lessen or ease the continuous irritation by the Foley balloon to the
-						Trigone and bladder neck. Also to protect the Foley Catheter with the
-						balloon fully inflated from being accidentally or intentionally pulled out
-						by the patient with the balloon fully inflated. A force of 10-50 Pounds is
-						needed to dislodge the Foley balloon from the bladder neck and urethra.
-						Thus, causing tears of the bladder neck and urethra that might have
-						serious immediate and long-term complications.
-					</p>
-					<p class="lc-doc-p lc-doc-bold">
-						Suggested Reading containing over 100 credible reference articles on the
-						Foley Catheter, Urinary Catheters: history, current status, adverse
-						events, and research agenda.<br />Roger C.L. Feneley, Ian B. Hopley &amp;
-						Peter N. T. Wells,
-					</p>
-					<p class="lc-doc-p">
-						Journal of Medical Engineering &amp; Technology, 2015 November 17:39 (38):
-						459-470.
-					</p>
-				</div>
-				<div class="lc-doc-block">
-					<h3 class="lc-doc-h3">2- The Malecot Catheter</h3>
-					<p class="lc-doc-p">
-						The Malecot Catheter has been with us for over 120 years now. It is used
-						almost exclusively by urologists. The Malecot needs a stiff metal or
-						plastic introducer to change the 3-4 wing or flower configuration to a
-						straight catheter to pass through a created hole surgically. This created
-						hole could be in the lower abdomen to drain the urinary bladder as in
-						suprapubic cystostomy. Alternatively, this surgically created hole is in
-						the flank of the patient to drain urine from the renal pelvis as in
-						Nephrostomy.
-					</p>
-					<p class="lc-doc-p">
-						Once the flower configuration is located by direct vision or via
-						fluoroscopy to be inside the urinary bladder as in suprapubic Cystostomy.
-						Once the flower configuration is inside the renal pelvis as located by
-						direct vision or fluoroscopy. Then the stiff metal or plastic introducer
-						is withdrawn. The straight Malecot catheter would revert back to 3-4 wing
-						flower configuration. In order to remove the Malecot Catheter the stiff
-						metal or plastic introducer is passed through the lumen of the Malecot.
-						Again introducing the stiff metal or plastic introducer is passed to the
-						inside of the tip of the Malecot Catheter under direct vision or through
-						fluoroscopy. Then by pulling on the shaft the Malecot towards the
-						operator. The 3-4 wing flower configuration would change into a straight
-						catheter again. The operator can pull out the straight Malecot catheter
-						from the urinary bladder suprapubically as in suprapubic cystostomy or
-						from the renal pelvis as in Nephrostomy.
-					</p>
-					<h4 class="lc-doc-h4">Indications for Use:</h4>
-					<p class="lc-doc-p">
-						<strong class="lc-doc-label">A-</strong> Suprapubic Cystostomy. Through a
-						surgically created hole in the lower abdomen just above the pubic bone.
-						The urinary bladder is drained for a long period of time and sometimes for
-						the life of the patient.
-					</p>
-					<p class="lc-doc-p">
-						<strong class="lc-doc-label">B-</strong> Nephrostomy. Through a surgically
-						created hole in the flank of the patient connected to the pelvis of the
-						kidney. The Malecot Catheter would drain the urine from the renal pelvis.
-						This could be for days, or weeks or for the life of the patient. In the
-						event of the presence of a JJ ureteral stent. Specialty Lotus Catheters
-						should be used. This is to avoid inadvertent pull out of the JJ by one of
-						the standard 2-3 wings of the Lotus Catheter.
-					</p>
-				</div>
-				<div class="lc-doc-block">
-					<h3 class="lc-doc-h3">3- The Straight Catheter</h3>
-					<p class="lc-doc-p">
-						The straight catheter has been with us since early civilization. The
-						Egyptians were first to describe draining the urinary bladder using a
-						stiff hollow bone or a leather tube lubricated using butter or cheese.
-						Then we see ancient Indian, ancient Chinese description.
-					</p>
-					<p class="lc-doc-p">
-						It was not until 180 years or so when synthetic polymers were used. The
-						straight catheter is a straight hollow malleable tube lubricated and
-						passed urethrally to empty the bladder. Since the advent of the Malecot
-						and Foley balloon Catheter. The straight catheter use is restricted by the
-						FDA to intermittent self catheterization in patient who are unable to
-						empty their bladder. Failure to empty a distended urinary bladder would
-						lead to back pressure to both kidneys. This would end in renal failure and
-						death.
-					</p>
-					<h4 class="lc-doc-h4">Indications for Use:</h4>
-					<p class="lc-doc-p">
-						The Straight Catheter is used for Clean Self Intermittent Catheterization
-						by the patient. The Straight Catheters catheterization kit usually have a
-						Straight Catheter with hydrophilic coating in addition to a sachet foil
-						containing sterile water used to lubricate the Straight Catheter for easy
-						insertion.
-					</p>
-				</div>
-				<div class="lc-doc-block">
-					<h3 class="lc-doc-h3">4- The Lotus Catheter</h3>
-					<h4 class="lc-doc-h4">Historical Aspect;</h4>
-					<p class="lc-doc-p">
-						Working as a scientist, inventor and as a urology educator at the
-						University of South Florida for over 25 years. The inventor came to the
-						conclusion as early as 1995 that the current Three different urinary
-						catheters in the medical field need to be changed. The reason is the
-						morbidity and even mortality for their use. In addition, the staggering
-						cost to treat CAUTI (Catheter Associated Urinary Tract Infection). The
-						most important reason for CAUTI is high residual urine in the Foley
-						Catheter (10cc-100cc), the presence of a balloon Foley Catheter sitting on
-						the most sensitive part of the bladder ie the trigone and bladder neck
-						causing continuous irritation, discomfort and painful bladder spasms. In
-						addition, the presence of a long tip (2.0 centimeter-4.5 centimeters) of
-						the Foley Catheter. This tip touches the dome of the bladder and creates a
-						catheter granuloma (lesion in the dome of the urinary bladder with acute
-						and chronic inflammatory cells) in 100% of the patients with a Foley
-						indwelling catheter for 48 hours or more.
-					</p>
-					<p class="lc-doc-p">
-						Coating the Foley Catheter with silver nitrate or antibiotics is at best
-						deceptive in treating the causes of CAUTI. Professor Roger C.L. Feneley
-						wrote an article citing over 100 credible scientific references describing
-						the morbidity, the mortality and the cost of CAUTI. Professor Feneley
-						addressed the issue of using silver nitrate or different catheter coatings
-						to treat the many causes of CAUTI. None of these Foley Catheter coatings
-						have any scientific basis to eliminate the leading causes of CAUTI.
-					</p>
-					<p class="lc-doc-p">
-						The Lotus Catheter was introduced to Professor Roger Feneley personally in
-						2019. He endorsed the Lotus Catheter as the answers to his listed ideal
-						urinary catheter article listed above published in November 2015. He
-						promised to work on conducting multi center clinical study in the UK to
-						endorse the Lotus Catheter as the standard of care in urology. Thus,
-						replacing the Foley Catheter, the Malecot Catheter, and the Straight
-						Catheter. Unfortunately, Professor Feneley passed away as a result of
-						Covid.
-					</p>
-					<p class="lc-doc-p">
-						The research on inventing a new urinary catheter started back in 1995
-						which was the subject of a published US patent 5,569,219, in October 29,
-						1996. The first Lotus catheter was called Collapsible Catheter. Multiple
-						prototypes were built but the first Lotus Catheter with No balloon was
-						invented in 2003. This was fully described in the issued US patent
-						7,264,609, published September 4, 2007. The Lotus Catheter was then called
-						the “No Balloon Catheter”.
-					</p>
-					<p class="lc-doc-p">
-						Multiple modifications were made to the No Balloon Lotus Catheter which
-						received the first FDA clearance in Latex, February 7, 2011. University of
-						South Florida successfully conducted a prospective clinical study on 50
-						patients in 2016 showing the Lotus Catheter is simpler, safer, and with no
-						residual urine. None of the 50 patients developed any CAUTI. This study
-						was published in the Journal of Urology and Renal Diseases on February 27,
-						2017. Professor Jorge Lockhart, the Professor and Chair of Urology
-						together with his team at the University of South Florida in Tampa
-						conducted this study.
-					</p>
-					<h4 class="lc-doc-h4">Indications for Use:</h4>
-					<p class="lc-doc-p">
-						On May 21, 2020 the FDA made a historical clearance of the Lotus Catheter
-						to be used as:
-					</p>
-					<p class="lc-doc-p">
-						<strong class="lc-doc-label">A-</strong> Foley Catheter,
-					</p>
-					<p class="lc-doc-p">
-						<strong class="lc-doc-label">B-</strong> Malecot Catheter,
-					</p>
-					<p class="lc-doc-p">
-						<strong class="lc-doc-label">C-</strong> Straight Catheter.
-					</p>
-					<p class="lc-doc-p">
-						Thus, the Lotus Catheter is the only urinary catheter with FDA Approval
-						for multiple uses of all the three urinary catheters in the medical field
-					</p>
-					<h4 class="lc-doc-h4">A- Lotus Catheter use as a Foley Catheter:</h4>
-					<p class="lc-doc-p">
-						The Lotus Catheter could be used as a Foley Catheter by inserting the
-						Lotus Catheter under strict aseptic precautions urethrally for continuous
-						bladder drainage and or continuous bladder irrigation. There is a
-						fundamental safety difference between the use of the Foley balloon as a
-						stabilizer, and the Lotus Catheter 2-3 wings as a stabilizer. This is
-						clarified in the instructions for use as approved by the FDA. The Lotus
-						Catheter is stabilized by attaching the Lotus Catheter to the thigh of the
-						patient using Lotus Catheter Stabilizer or cross adhesive tapes firmly
-						attached to the inner side of the thigh of the patient. Thus, the 2-3 wing
-						Lotus Catheter would not be sitting on the bladder neck or trigone. The
-						2-3 wing Lotus would be positioned at least 2-5 centimeters above the
-						bladder neck and the trigone. If the Lotus Catheter slips for any reason
-						to sit on the bladder neck and trigone. The patient would feel slight
-						discomfort as the 2-3 wings weigh about three grams.
-					</p>
-					<h4 class="lc-doc-h4">Closed Lotus Catheter System.</h4>
-					<p class="lc-doc-p">
-						Here the Lotus Catheter comes as part of a complete Kit in which the Lotus
-						Catheter is already attached to a bedside urine bag. The attachment
-						junction is sealed with a plastic covering that may be removed if desired
-						by the healthcare provider. The Closed System is used mainly by the Armed
-						Forces and in an operating room. The objective of a sealed junction is to
-						prevent possible Catheter contamination by the healthcare provider.
-					</p>
-					<h4 class="lc-doc-h4">B- Lotus Catheter use as a Malecot</h4>
-					<p class="lc-doc-p">
-						The Lotus Catheter is used as a Malecot in acute and chronic suprapubic
-						cystostomy. Also, used in acute and chronic nephrostomy. A precautionary
-						note in using the Lotus Catheter in acute nephrostomy in the presence of a
-						JJ ureteral stent. It would be preferable to use a Specialty Two Wing
-						Nephrostomy Lotus Catheter instead of the standard Three Wing Lotus
-						Catheter. In such cases the healthcare provider during removal or
-						replacing the Nephrostomy Lotus Catheter. The healthcare provider would
-						under fluoroscopy rotate the Specialty Two Wings of the Lotus Catheter
-						away from the JJ ureteral stent. This is to ensure during pulling out or
-						replacing the Lotus Catheter. The wings stay away from the JJ. Thus, avoid
-						accidental dislodgement of the JJ ureteral stent. Stabilization of the
-						suprapubic cystostomy can be achieved using Lotus Catheter Stabilizer or
-						cross adhesive tapes.
-					</p>
-					<h4 class="lc-doc-h4">C- Lotus Catheter use as a Straight Catheter.</h4>
-					<p class="lc-doc-p">
-						The Lotus Catheter is used in Clean Intermittent Catheterization by the
-						patient at home. The Lotus Catheter would have hydrophilic coating. Inside
-						the sterile package of the Lotus Catheter is a sterile Sachet foil of
-						sterile water to use as a lubricant for insertion. The patient would open
-						the wing after full insertion to quickly drain the urinary bladder. Then
-						discard the Lotus Catheter safely.
-					</p>
-					<p class="lc-doc-p">
-						The patient under the instruction of his healthcare provider may choose to
-						use the Lotus Catheter as an indwelling for overnight continuous drainage.
-						The patient inserts the Lotus Catheter as a Straight catheter. The patient
-						would open the wings to drain the urinary bladder. Then, stabilizes the
-						Lotus Catheter to the thigh using Lotus Catheter Stabilizer or cross
-						adhesive tape firmly secured with the 2-3 wing, 2.5-5 centimeter above the
-						trigone and bladder neck. The patient then connects the Lotus Catheter to
-						a bedside urine bag or to a urine leg bag.
-					</p>
-					<p class="lc-doc-p lc-doc-bold">
-						The Lotus Catheter is the only FDA approved indwelling urinary catheter
-						that can be used by the patient at home
-					</p>
-					<h4 class="lc-doc-h4">Closed Lotus Catheter System</h4>
-					<p class="lc-doc-p">
-						The Lotus Catheter comes as a part of complete Catheter Kit. The Lotus
-						Catheter is already attached to a bed side urine bag or urine leg bag, The
-						connection between the lotus Catheter and the urine bag is sealed a
-						plastic seal. This is to prevent possible contamination by the patient.
-						This is what a healthcare provider would prescribe in certain immune
-						compromised patients or as a part of CAUTI infection.
-					</p>
-				</div>
-				<div class="lc-doc-block">
-					<h3 class="lc-doc-h3">Different Specialty Lotus Catheter</h3>
-					<h4 class="lc-doc-h4">A- Two Way Lotus Catheter.</h4>
-					<p class="lc-doc-p">
-						The Two Way Lotus Catheter is equivalent to the Three Way Foley Catheter.
-						Since one way for the Foley Catheter is for a tube feeding to inflate the
-						balloon with sterile water, while the other way a tube for irrigation
-						using Glycine isotonic solution and the third way is the tube draining the
-						mixed fluids with blood from the urinary bladder. The Lotus Catheter is a
-						No Balloon Catheter. Thus the term used a Two-way Lotus Catheter System.
-						One way tube is to inject Glycine isotonic solution to irrigate the
-						urinary bladder after prostate or bladder endoscopic or rarely open
-						surgery. The second way is the draining tube of the Lotus Catheter from
-						the urinary bladder.
-					</p>
-					<h4 class="lc-doc-h4">B- Council Tip Lotus Catheter,</h4>
-					<p class="lc-doc-p">
-						Council Tip Lotus Catheter is very similar to the Foley Council Tip. In
-						this catheter there is a side channel that feeds inside the lumen of the
-						Lotus Catheter that is open at the very tip of the catheter. This Council
-						Tip Lotus Catheter is used after endoscopic dilatation of the urethra in
-						cases of urethral stricture. After the dilatation is completed a guide
-						wire is inserted endoscopically from the external meatus to the cavity of
-						the urinary bladder. This guide wire is threaded through open side channel
-						at the tip of the Council Catheter until the other end of the wire is
-						exited from the side channel. Then a Lotus Catheter preferable two French
-						sizes lower than the maximum dilator used is threaded along the guide wire
-						until the 2-3 Wings are positioned 2.5-5.0 Centimeter above the trigone or
-						bladder neck as confirmed endoscopically by the urologist.
-					</p>
-					<h4 class="lc-doc-h4">C- Coudé Lotus Catheter</h4>
-					<p class="lc-doc-p">
-						The Coudé Lotus Catheter is very similar to the Coudé Foley Catheter. The
-						very tip of the Coudé is at angle of 25-30 degrees up from the shaft of
-						the Lotus Catheter. The objective is to be used by the urologists in
-						patients with median lobe prostatic enlargement. It would be very
-						difficult otherwise to negotiate the tip of a straight Foley Catheter or
-						Lotus Catheter pass a median lobe prostatic enlargement.
-					</p>
-					<h4 class="lc-doc-h4">D- Specialty Nephrostomy Lotus Catheter.</h4>
-					<p class="lc-doc-p">
-						In acute or in chronic surgically created nephrostomy channel extending
-						from the pelvis of the collecting system of the kidney to the flank skin.
-						Through this channel and under fluoroscopy a Council Tip Lotus Catheter is
-						threaded along the entire track to the pelvis of the Kidney. At times a JJ
-						stent is inserted urethrally through the ureter up to the pelvis of the
-						kidney acting as a draining stent. Thus one tip of the J is attached to
-						the ureteral orifice of the urinary bladder. While the other J of the same
-						tube is resting in the pelvis of the kidney. At times the JJ tube is
-						threaded through the nephrostomy tube down the ureter and until one J
-						hooks around the pelvis of the kidney while the other J hooks around the
-						ureteral orifice at the trigone of the bladder. Since three wings are more
-						likely to dislodge this JJ stent. It would be preferable to use Two Wing
-						Council Tip Catheter. Thus, named by urologist as Specialty Nephrostomy
-						Council Catheter. The deployment of the Two Wings during insertion or
-						during closing the wings when removing the Lotus Catheter is done under
-						fluoroscopy. The Two Wings can be steered away and clear of the JJ stent
-						under fluoroscopy.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<div
-			id="inventor-video-modal"
-			style="
-				display: none;
-				position: fixed;
-				inset: 0;
-				background: rgba(0, 0, 0, 0.9);
-				z-index: 9999;
-				align-items: center;
-				justify-content: center;
-				padding: 2rem;
-			">
-			<div style="width: 100%; max-width: 960px">
-				<div style="text-align: right; margin-bottom: 0.75rem">
-					<button
-						id="inventor-video-close"
-						type="button"
-						aria-label="Close video"
-						style="
-							background: none;
-							border: 1px solid rgba(255, 255, 255, 0.4);
-							color: #fff;
-							border-radius: 50%;
-							width: 36px;
-							height: 36px;
-							cursor: pointer;
-							font-size: 1rem;
-						">
-						✕
-					</button>
-				</div>
-				<video
-					id="inventor-video-el"
-					controls
-					playsinline
-					style="
-						width: 100%;
-						max-height: 78vh;
-						border-radius: 12px;
-						background: #000;
-					"></video>
-				<div style="color: #fff; margin-top: 1rem; text-align: center">
-					<p
-						class="lc-eyebrow"
-						style="justify-content: center; display: flex">
-						Straight from the inventor
-					</p>
-					<h3 style="margin-bottom: 0.4rem">Dr. Hakki on what sets Lotus apart</h3>
-					<p
-						style="
-							color: rgba(255, 255, 255, 0.65);
-							max-width: 560px;
-							margin: 0 auto;
-						">
-						A 12-minute comparison of Lotus and Foley that covers how each works, the
-						clinical data, and why holding a catheter without a balloon could change
-						the standard of care.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<script>
-			(function () {
-				var trigger = document.getElementById("inventor-video-trigger");
-				var modal = document.getElementById("inventor-video-modal");
-				var video = document.getElementById("inventor-video-el");
-				var closeBtn = document.getElementById("inventor-video-close");
-				if (!trigger || !modal || !video || !closeBtn) return;
-
-				function openModal() {
-					modal.style.display = "flex";
-					video.src =
-						"https://cdn.jumpshare.com/preview/XXFzCWuesSfBIbEnaMUoAm5TCZOi2jofKcATH7b9PJJdsgKvKlVeF3euraYyGWOK4Qilok8OfBn94n-haUoMk6BmAbzCtA27GKCDjn0lTEkqVqxCxOIhgg_4z41V3t-HwqdFLLzDCD4nRCiH62ZpPm6yjbN-I2pg_cnoHs_AmgI.mp4";
-					video.play();
-					document.body.style.overflow = "hidden";
-				}
-				function closeModal() {
-					modal.style.display = "none";
-					video.pause();
-					video.removeAttribute("src");
-					video.load();
-					document.body.style.overflow = "";
-				}
-				trigger.addEventListener("click", openModal);
-				closeBtn.addEventListener("click", closeModal);
-				modal.addEventListener("click", function (e) {
-					if (e.target === modal) closeModal();
-				});
-				document.addEventListener("keydown", function (e) {
-					if (e.key === "Escape") closeModal();
-				});
-			})();
-		</script>
-		<section class="case-studies-section section-spacing">
-			<div class="container">
-				<div class="case-studies-title">
-					<p
-						class="lc-eyebrow"
-						style="color: #6856df; font-weight: 200 !important">
-						Reimbursement &amp; Regulatory
-					</p>
-					<h2 class="slider-section-title">
-						Established codes, a familiar routine, nothing new to adopt.
-					</h2>
-					<p
-						style="
-							max-width: 640px;
-							margin: 0.75rem 0 0;
-							color: var(--color--gray-6);
-						">
-						Lotus is billed under existing HCPCS codes and placed with the same
-						clinical procedure as a Foley catheter, so there are no new billing
-						pathways and no change to workflow.
-					</p>
-					<div
-						style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem">
-						<span
-							style="
-								display: inline-flex;
-								align-items: center;
-								padding: 0.5rem 1rem;
-								border-radius: 30px;
-								background: rgba(109, 92, 225, 0.12);
-								color: #6d5ce1;
-								font-size: 0.8rem;
-								font-weight: 700;
-							"
-							>FDA 510(k) K191512 · Class II Medical Device</span
-						>
-						<span
-							style="
-								display: inline-flex;
-								align-items: center;
-								padding: 0.5rem 1rem;
-								border-radius: 30px;
-								background: rgba(109, 92, 225, 0.12);
-								color: #6d5ce1;
-								font-size: 0.8rem;
-								font-weight: 700;
-							"
-							>Patent protection until 2045</span
-						>
-						<span
-							style="
-								display: inline-flex;
-								align-items: center;
-								padding: 0.5rem 1rem;
-								border-radius: 30px;
-								background: rgba(109, 92, 225, 0.12);
-								color: #6d5ce1;
-								font-size: 0.8rem;
-								font-weight: 700;
-							"
-							>500K+ units in use worldwide</span
-						>
-					</div>
-				</div>
-				<div class="w-layout-grid grid-review">
-					<div>
-						<div
-							data-wf--review-item--variant="review-item-01"
-							class="review-item">
-							<div class="review-author">
-								<div class="review-author-detail">
-									<h3 class="review-author-name">
-										Billed under codes that already exist
-									</h3>
-									<div class="review-author-position">CPT 51702</div>
-								</div>
-							</div>
-							<p class="review-content">
-								Insertion is billed with CPT 51702, the same code as Foley
-								catheterization, which means no new billing pathway and no disruption to
-								workflow.
-							</p>
-						</div>
-					</div>
-					<div>
-						<div
-							data-wf--review-item--variant="review-item-01"
-							class="review-item">
-							<div class="review-author">
-								<div class="review-author-detail">
-									<h3 class="review-author-name">
-										Meant to be cost-neutral, with savings as the upside
-									</h3>
-								</div>
-							</div>
-							<p class="review-content">
-								Its price is set to compete with Foley catheters. It is built to sit
-								inside existing CMS quality-program frameworks (HRRP, HACRP, CAUTI
-								reporting) and to help bring down the total cost of care.
-							</p>
-						</div>
-					</div>
-					<div>
-						<div
-							data-wf--review-item--variant="review-item-01"
-							class="review-item">
-							<div class="review-author">
-								<div class="review-author-detail">
-									<h3 class="review-author-name">Built to be produced at scale</h3>
-								</div>
-							</div>
-							<p class="review-content">
-								Manufacturing takes place in ISO 13485-certified facilities that can
-								support national and international distribution. Redundant supply and
-								quality systems are set up to satisfy the procurement requirements of
-								large health systems and GPO contracts.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section
-			class="lc-audience-section"
-			id="partners">
-			<div class="container-medium">
-				<div class="lc-audience">
-					<div class="lc-aud-label">Collaborate with us</div>
-					<div
-						class="lc-aud-title"
-						style="font-family: &quot;Inter sans-serif&quot;">
-						Prepared to leave the balloon behind?
-					</div>
-					<div class="lc-aud-subtitle">
-						Whether you want to assess Lotus for clinical use or look into a
-						distribution or GPO partnership, the data and support to get moving fast
-						are ready.
-					</div>
-
-					<div class="lc-aud-grid">
-						<!-- CLINICIAN CARD -->
-						<div class="lc-aud-card">
-							<div class="lc-aud-card-body">
-								<div class="lc-aud-card-tag">Clinicians &amp; Hospitals</div>
-								<h3>For clinicians: judge it on the evidence.</h3>
-								<p>
-									Assess Lotus together with your team. We supply clinical data packages,
-									product samples to try hands-on, and a direct line to our medical
-									staff.
-								</p>
-								<ul>
-									<li>Complete clinical study results</li>
-									<li>Outcomes compared with Foley</li>
-									<li>Samples for product evaluation</li>
-									<li>Published CAUTI cost figures and help with value analysis</li>
-								</ul>
-								<a
-									href="#contact"
-									class="lc-aud-btn-primary"
-									>Ask for an evaluation</a
-								>
-								<div style="margin-top: 0.875rem">
-									<a
-										href="#comparison"
-										class="lc-aud-alt-link"
-										>or go to the clinical research →</a
-									>
-								</div>
-							</div>
-						</div>
-
-						<!-- DISTRIBUTOR & GPO CARD -->
-						<div class="lc-aud-card">
-							<div class="lc-aud-card-body">
-								<div class="lc-aud-card-tag">Distributors &amp; GPOs</div>
-								<h3>Industry partnerships: shape what comes next.</h3>
-								<p>
-									Become part of a worldwide network taking balloon-free catheter
-									technology to market, through territory-based distribution agreements
-									or by getting on a GPO formulary.
-								</p>
-								<ul>
-									<li>Exclusive territories can be arranged</li>
-									<li>GPO formulary review &amp; value analysis assistance</li>
-									<li>
-										Support for marketing, clinical training &amp; regulatory dossiers
-									</li>
-									<li>Fit with quality programs: HRRP, HACRP, CAUTI reporting</li>
-								</ul>
-								<a
-									href="#partners"
-									class="lc-aud-btn-secondary"
-									>Explore industry partnerships</a
-								>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section
-			class="statistics-section section-spacing"
-			id="press">
-			<div class="container">
-				<div class="section-title text-center">
-					<h3
-						data-w-id="f397483c-e437-7f2b-972f-cf48870d48f2"
-						style="opacity: 0"
-						class="no-margin-bottom">
-						Press & announcements
-					</h3>
-				</div>
-				<div class="w-layout-grid grid-statistics">
-					<a
-						href="https://finance.yahoo.com/news/fda-cleared-lotus-catheter-accelerates-150000781.html"
-						target="_blank"
-						rel="noopener"
-						data-w-id="80cb35a9-78c7-7aa1-1eb9-56f93e554363"
-						style="opacity: 0"
-						class="statistics-item w-inline-block">
-						<div class="statistics-top">
-							<div class="counter-count-wrap">
-								<h2 class="counter-count-number statistics-count">Yahoo Finance</h2>
-							</div>
-						</div>
-						<div class="statistics-divider"></div>
-						<p class="statistics-description">
-							FDA-Cleared Lotus Catheter Accelerates Global Expansion, Backed by
-							Peer-Reviewed Zero-UTI Study and 500,000+ Uses
-						</p>
-						<div class="lc-press-date">October 2025</div>
-					</a>
-					<a
-						href="https://www.gavinpublishers.com/article/view/the-lotus-catheter-a-non-balloon-novel-urethral-catheter-a-prospective-study"
-						target="_blank"
-						rel="noopener"
-						data-w-id="626a394c-a91d-09e5-1b08-4a6a5414ac84"
-						style="opacity: 0"
-						class="statistics-item w-inline-block">
-						<div class="statistics-top">
-							<div class="counter-count-wrap">
-								<h2 class="counter-count-number statistics-count">
-									Gavin Publishers — Peer Reviewed
-								</h2>
-							</div>
-						</div>
-						<div class="statistics-divider"></div>
-						<p class="statistics-description">
-							The Lotus Catheter: A Non-Balloon Novel Urethral Catheter — A Prospective
-							Study (50-Patient Clinical Trial, 0% CAUTI)
-						</p>
-						<div class="lc-press-date">Published Study</div>
-					</a>
-					<a
-						href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K191512"
-						target="_blank"
-						rel="noopener"
-						id="w-node-_916f83ab-6656-683b-8e3a-253b9dcf81d6-1f421fd7"
-						data-w-id="916f83ab-6656-683b-8e3a-253b9dcf81d6"
-						style="opacity: 0"
-						class="statistics-item w-inline-block">
-						<div class="statistics-top">
-							<div class="counter-count-wrap">
-								<h2 class="counter-count-number statistics-count">FDA · AccessData</h2>
-							</div>
-						</div>
-						<div class="statistics-divider"></div>
-						<p class="statistics-description">
-							510(k) Premarket Notification K191512: Lotus No Balloon Catheter, Class
-							II Medical Device
-						</p>
-						<div class="lc-press-date">FDA Cleared</div>
-					</a>
-				</div>
-			</div>
-		</section>
+		
+	
 		<section
 			class="split-cta-section section-spacing-bottom"
 			id="contact">
@@ -4257,7 +2765,7 @@
 								style="align-self: flex-start"
 								class="footer-logo-link w-inline-block w--current">
 								<img
-									src="assets/Images/lotuscatheter_FINAL_aligned.png"
+									src="assets/Images/logowhite.webp"
 									loading="eager"
 									alt="Lotus Catheter"
 									class="footer-logo" />
@@ -4555,6 +3063,200 @@
 				navBtn.addEventListener("click", toggleMenu);
 				navMenu.querySelectorAll("a").forEach(function (link) {
 					link.addEventListener("click", closeMenu);
+				});
+			})();
+		</script>
+		<style id="lc-line-anim">
+			.mission-divider.lc-line {
+				transform: scaleX(0);
+				transform-origin: left center;
+				transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+			}
+			.mission-divider.lc-line.lc-in {
+				transform: scaleX(1);
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.mission-divider.lc-line {
+					transform: none;
+					transition: none;
+				}
+			}
+		</style>
+		<script>
+			(function () {
+				var lines = document.querySelectorAll(".mission-divider");
+				if (!lines.length) return;
+				function reveal(l) {
+					if (l.classList.contains("lc-in") || l._lcPending) return;
+					l._lcPending = true;
+					void l.offsetWidth;
+					setTimeout(function () {
+						l.classList.add("lc-in");
+					}, 120);
+				}
+				lines.forEach(function (l) {
+					l.classList.add("lc-line");
+				});
+				void document.body.offsetWidth;
+				var io =
+					"IntersectionObserver" in window &&
+					new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (e) {
+								if (e.isIntersecting) {
+									reveal(e.target);
+									io.unobserve(e.target);
+								}
+							});
+						},
+						{ threshold: 0.6 },
+					);
+				function check() {
+					var h = window.innerHeight;
+					lines.forEach(function (l) {
+						var r = l.getBoundingClientRect();
+						if (r.top < h * 0.92 && r.bottom > 0) reveal(l);
+					});
+				}
+				if (io)
+					lines.forEach(function (l) {
+						io.observe(l);
+					});
+				window.addEventListener("scroll", check, { passive: true });
+				window.addEventListener("load", function () {
+					setTimeout(check, 350);
+				});
+			})();
+		</script>
+		<style id="lc-title-anim">
+			.lc-st-w {
+				display: inline-block;
+				white-space: nowrap;
+			}
+			.lc-st-c {
+				display: inline-block;
+				opacity: 0;
+				transform: translateY(0.35em);
+				filter: blur(4px);
+				animation: lc-st-char 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+				animation-play-state: paused;
+				animation-delay: calc(var(--i) * var(--step, 28ms));
+			}
+			.lc-st.lc-play .lc-st-c {
+				animation-play-state: running;
+			}
+			@keyframes lc-st-char {
+				to {
+					opacity: 1;
+					transform: none;
+					filter: blur(0);
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.lc-st-c {
+					animation: none;
+					opacity: 1;
+					transform: none;
+					filter: none;
+				}
+			}
+		</style>
+		<script>
+			(function () {
+				var sel = [
+					".our-mission-content",
+					".about-title",
+					".graph-title",
+					".section-title h2",
+					".section-title h3",
+					".we-serve-section-title",
+					".info-section-title",
+					".case-section-title",
+					".benefit-title",
+					".benefits-title",
+					".our-story-title",
+					".process-title",
+					".lc-doc-title",
+					".slider-section-title",
+					".split-cta-title",
+					".split-hero-title",
+					".case-studies-title h2",
+				].join(",");
+				var els = Array.prototype.slice
+					.call(document.querySelectorAll(sel))
+					.filter(function (el) {
+						return !el.closest(".lc-hero2") && !el.querySelector(".lc-st-c");
+					});
+				if (!els.length) return;
+				function split(el) {
+					var n = 0;
+					el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
+					(function walk(node) {
+						Array.prototype.slice.call(node.childNodes).forEach(function (c) {
+							if (c.nodeType === 3) {
+								var frag = document.createDocumentFragment();
+								c.textContent.split(/(\s+)/).forEach(function (part) {
+									if (!part) return;
+									if (/^\s+$/.test(part)) {
+										frag.appendChild(document.createTextNode(" "));
+										return;
+									}
+									var w = document.createElement("span");
+									w.className = "lc-st-w";
+									w.setAttribute("aria-hidden", "true");
+									part.split("").forEach(function (ch) {
+										var sp = document.createElement("span");
+										sp.className = "lc-st-c";
+										sp.style.setProperty("--i", n++);
+										sp.textContent = ch;
+										w.appendChild(sp);
+									});
+									frag.appendChild(w);
+								});
+								node.replaceChild(frag, c);
+							} else if (c.nodeType === 1) {
+								walk(c);
+							}
+						});
+					})(el);
+					el.classList.add("lc-st");
+					el.style.setProperty(
+						"--step",
+						Math.max(10, Math.min(34, Math.round(1000 / Math.max(n, 1)))) + "ms",
+					);
+				}
+				els.forEach(split);
+				function play(el) {
+					el.classList.add("lc-play");
+				}
+				var io =
+					"IntersectionObserver" in window &&
+					new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (e) {
+								if (e.isIntersecting) {
+									play(e.target);
+									io.unobserve(e.target);
+								}
+							});
+						},
+						{ threshold: 0.35 },
+					);
+				function check() {
+					var h = window.innerHeight;
+					els.forEach(function (el) {
+						if (el.classList.contains("lc-play")) return;
+						var r = el.getBoundingClientRect();
+						if (r.top < h * 0.88 && r.bottom > 0) play(el);
+					});
+				}
+				if (io)
+					els.forEach(function (el) {
+						io.observe(el);
+					});
+				window.addEventListener("scroll", check, { passive: true });
+				window.addEventListener("load", function () {
+					setTimeout(check, 300);
 				});
 			})();
 		</script>

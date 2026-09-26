@@ -2070,8 +2070,8 @@ textarea.w-input, textarea.w-select {
     --_typography---h6--line-height-2: 1.1em;
     --_typography---h6--font-weight-400: 400;
     --border-radius--sm: .313rem;
-    --color--primary-1: #1d75b2;
-    --color--gray-7: #f5f3f6;
+    --color--primary-1: #0270CC;
+    --color--gray-7: #f3f5f6;
     --_typography---body--body-lg: 1.25rem;
     --_layout---container--container-max-width: 1520px;
     --_layout---container--container-gutter: 1.875rem;
@@ -2103,14 +2103,14 @@ textarea.w-input, textarea.w-select {
     --gap--gap-13: 100px;
     --gap--gap-8: 50px;
     --gap--gap-2: 10px;
-    --color--gray-2: #333a35;
+    --color--gray-2: #33353a;
     --gap--gap-7: 40px;
     --gap--gap-4: 20px;
     --border-radius--lg: 1.25rem;
     --_layout---container--container-small-max-width: 950px;
     --_layout---container--container-small-gutter: 1.875rem;
     --color--white: white;
-    --_layout---spacing--section-spacing: 8.75rem;
+    --_layout---spacing--section-spacing: 3.75rem;
     --_layout---spacing--section-spacing-top: 8.75rem;
     --_layout---spacing--section-spacing-bottom: 8.75rem;
     --_typography---h6--line-height-1: 1em;
@@ -3168,6 +3168,11 @@ figcaption {
     background-size: 6px 6px
 }
 
+.nav-link.nav-active {
+    color: var(--color--primary-1);
+    background-size: 6px 6px
+}
+
 .nav-menu {
     align-self: center;
     position: static
@@ -3226,8 +3231,8 @@ figcaption {
 
 .navbar {
     background-color: var(--color--transparent);
-    padding-top: 1.15rem;
-    padding-bottom: 1.15rem
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem
 }
 
 .utility-page-content {
@@ -3472,6 +3477,19 @@ figcaption {
     background-color: var(--color--secondary-2)
 }
 
+.nav-button-wrap .button-black {
+    background-color: var(--color--primary-1);
+    transition: background-color .3s ease-in-out
+}
+
+.nav-button-wrap .button-black:hover {
+    background-color: #015bad
+}
+
+.nav-button-wrap .button-black .button-hover {
+    background-color: #015bad
+}
+
 .button-left-icon {
     z-index: 3;
     background-color: var(--color--white);
@@ -3509,7 +3527,7 @@ figcaption {
 
 .logo {
     width: auto;
-    height: 50px
+    height: 40px
 }
 
 .dropdown {
@@ -3643,7 +3661,7 @@ figcaption {
 }
 
 .split-hero-title {
-    color: var(--color--white);
+    color: #0c111e;
     font-size: var(--_typography---h1--h1);
     line-height: var(--_typography---h1--line-height-1)
 }
@@ -3737,7 +3755,7 @@ figcaption {
 }
 
 .hero-section {
-    background-image: linear-gradient(180deg, var(--color--transparent), var(--color--black));
+    background-image: linear-gradient(180deg, var(--color--transparent), #FFF);
     padding-top: 16rem;
     padding-bottom: 8.75rem;
     position: relative;
@@ -3748,7 +3766,7 @@ figcaption {
     grid-column-gap: var(--gap--gap-5);
     grid-row-gap: var(--gap--gap-5);
     grid-template-rows: auto;
-    grid-template-columns: 1fr minmax(200px, .85fr);
+    grid-template-columns: 1fr minmax(400px, .75fr);
     position: relative
 }
 
@@ -3760,9 +3778,16 @@ figcaption {
 }
 
 .hero-title {
-    color: #FFF;
+    color: #152241;
     line-height: var(--_typography---h1--line-height-1);
     margin-bottom: 2.5rem;
+}
+
+.hero-button-inline {
+    grid-column-gap: var(--gap--gap-3);
+    grid-row-gap: var(--gap--gap-3);
+    flex-flow: wrap;
+    display: flex
 }
 
 .hero-right {
@@ -3770,7 +3795,8 @@ figcaption {
     grid-row-gap: var(--gap--gap-4);
     flex-flow: column;
     width: 100%;
-    display: flex
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hero-pre-title {
@@ -3806,7 +3832,7 @@ figcaption {
 .hero-item-one {
     grid-column-gap: var(--gap--gap-3);
     grid-row-gap: var(--gap--gap-3);
-            background-image: linear-gradient(180deg, var(--color--transparent), #0c111e 100%, white), url(../assets/Images/iridescent_oil_bubbles.jpg);
+            background-image: linear-gradient(180deg, var(--color--transparent), #0c111e 100%, white), url(../assets/Images/iridescent_oil_bubbles.webp);
 
     background-color: var(--color--black);
     background-position: 0 0, 50%;
@@ -4050,7 +4076,7 @@ figcaption {
     grid-column-gap: var(--gap--gap-4);
     grid-row-gap: var(--gap--gap-4);
     border-radius: var(--border-radius--sm);
-    background-color: var(--color--gray-1);
+    background-color: #101625;
     padding-top: .813rem;
     padding-bottom: .813rem;
     padding-left: 1.25rem;
@@ -6632,7 +6658,7 @@ figcaption {
 .solution-item-one {
     border-radius: var(--border-radius--lg);
     background-color: var(--color--black);
-    background-image: linear-gradient(#17101bb3, #18101b00), url(../assets/Images/oil_bubble_macro.jpg);
+    background-image: linear-gradient(#17101bb3, #18101b00), url(../assets/Images/oil_bubble_macro.webp);
     background-position: 0 0, 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -7285,7 +7311,6 @@ figcaption {
 .left-solution-item-one {
     border-radius: var(--border-radius--lg);
     background-color: var(--color--black);
-    background-image: linear-gradient(#101b13cc, #101b13cc), url(https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/692adfbec45c54c80074ca9b_service-2.webp);
     background-position: 0 0, 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -8595,7 +8620,7 @@ figcaption {
     }
 
     .hero-item-one {
-        background-image: linear-gradient(180deg, var(--color--transparent), #101b13 100%, white), url(../assets/Images/iridescent_oil_bubbles.jpg);
+        background-image: linear-gradient(180deg, var(--color--transparent), #0c111e 100%, white), url(../assets/Images/iridescent_oil_bubbles.webp);
         background-position: 0 0, 50%;
         background-repeat: repeat, no-repeat;
         background-size: auto, cover;
