@@ -1016,351 +1016,257 @@
 			</div>
 		</div>
 		<section
-			class="lc-hero2"
+			class="hero-section"
 			id="component">
 			<style>
-				.lc-hero2 {
-					background: #fff;
-					padding: 6rem 0;
-					overflow: hidden;
+				.hero-section .hero-title { color: #152241; }
+				.hero-section .hero-title .hero-accent {
+					background: linear-gradient(90deg, #1870b0 0%, #3aa1e4 100%);
+					-webkit-background-clip: text;
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+					color: transparent;
 				}
-				.lc-hero2 .lc-h-grid {
-					display: grid;
-					grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 0.6fr);
-					gap: 3rem;
-					align-items: stretch;
-				}
-				.lc-hero2 .lc-h-media {
-					position: relative;
-					border-radius: 20px;
-					overflow: hidden;
-					background: #f3f6fb;
-					min-height: 600px;
-				}
-				.lc-hero2 .lc-h-media img {
-					position: absolute;
-					inset: 0;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-					object-position: 50% 30%;
-				}
-				.lc-hero2 .lc-h-body {
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					gap: 2rem;
-					padding: 0;
-				}
-				.lc-hero2 .lc-h-title {
-					color: #0f1f3d;
-					font-size: clamp(2.6rem, 5vw, 4.6rem);
-					line-height: 1.12;
-					margin: 0 0 1.75rem;
-				}
-				.lc-hero2 .lc-h-title em {
-					font-style: normal;
-					color: #0270cc;
-				}
-				.lc-hero2 .lc-h-text {
-					color: #26324a;
-					font-size: 1rem;
-					line-height: 1.6;
-					max-width: 500px;
-					margin: 0;
-				}
-				.lc-hero2 .lc-h-badge {
-					font-family: var(--_typography---font-family--heading);
-					font-weight: 400;
-					color: #0270cc;
-					font-size: clamp(2.6rem, 4.6vw, 4rem);
-					line-height: 1;
-					letter-spacing: -0.01em;
-				}
-				.lc-hero2 .lc-h-foot {
-					display: flex;
-					flex-direction: column;
-					gap: 1.75rem;
-				}
-				.lc-hero2 .lc-h-items {
-					display: grid;
-					grid-template-columns: repeat(3, minmax(0, 1fr));
-					gap: 1.5rem;
-				}
-				.lc-hero2 .lc-h-item {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-					gap: 0.9rem;
-					color: #0f1f3d;
-					font-size: 1.05rem;
-					font-weight: 500;
-				}
-				.lc-hero2 .lc-h-icon {
+				.hero-section .hero-title::after {
+					content: "";
 					display: block;
-					width: 64px;
-					height: 64px;
-					background-color: #0270cc;
+					width: 72px;
+					height: 1px;
+					margin-top: 1.25rem;
+					border-radius: 4px;
+					background: linear-gradient(90deg, #1870b0, #bddff7);
+					animation: hero-bar 1.1s 0.4s ease-out both;
+				}
+				@keyframes hero-bar { from { width: 0; } to { width: 72px; } }
+				.hero-icon-mask {
+					display: inline-block;
+					flex-shrink: 0;
+					width: 34px;
+					height: 34px;
+					background-color: #1870b0;
 					-webkit-mask: var(--icon-url) center / contain no-repeat;
 					mask: var(--icon-url) center / contain no-repeat;
 				}
-				.lc-hero2 .lc-h-side img {
-					display: block;
-					width: 70%;
-					aspect-ratio: 2 / 3;
-					object-fit: cover;
-					border-radius: 20px;
+				.hero-section .grid-hero-right {
+					border-radius: 22px;
+					box-shadow: 0 40px 80px -36px rgba(12, 17, 30, 0.85), 0 0 0 1px rgba(189, 223, 247, 0.28);
+					transition: translate 0.35s ease, box-shadow 0.35s ease;
 				}
-				.lc-hero2 .lc-h-side {
-					align-self: start;
+				.hero-section .grid-hero-right:hover {
+					translate: 0 -5px;
+					box-shadow: 0 46px 90px -34px rgba(12, 17, 30, 0.9), 0 0 0 1px rgba(189, 223, 247, 0.5);
 				}
-				.lc-hero2 .lc-h-media {
-					animation: lc-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+				.hero-section .hero-item-one {
+					justify-content: flex-start;
+					gap: 1.1rem;
+					padding: 2rem 2.25rem;
+					background-image:
+						radial-gradient(120% 90% at 100% 0%, rgba(58, 161, 228, 0.55) 0%, rgba(58, 161, 228, 0) 60%),
+						linear-gradient(160deg, rgba(12, 17, 30, 0.95) 0%, rgba(21, 34, 65, 0.86) 100%),
+						url(assets/Images/iridescent_oil_bubbles.webp);
+					background-position: 0 0, 0 0, 50%;
+					background-repeat: no-repeat;
+					background-size: auto, auto, cover;
 				}
-				.lc-hero2 .lc-h-media img {
-					animation: lc-zoom 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+				.hero-note {
+					display: flex;
+					align-items: flex-start;
+					gap: 14px;
+					padding-bottom: 1.25rem;
+					border-bottom: 1px solid rgba(189, 223, 247, 0.22);
 				}
-				.lc-hero2 .lc-h-side img {
-					animation: lc-rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
-					transition:
-						transform 0.5s ease,
-						box-shadow 0.5s ease;
+				.hero-note p { margin: 0; color: #dcecf9; font-size: 0.9rem; line-height: 1.55; }
+				.hero-note .hero-icon-mask { background-color: #7cc4f2; width: 30px; height: 30px; margin-top: 2px; }
+				.hero-section .hero-counter .counter-count-wrap h2 {
+					font-size: clamp(3.4rem, 6vw, 5.2rem);
+					line-height: 1;
+					background: linear-gradient(180deg, #ffffff 25%, #7cc4f2 100%);
+					-webkit-background-clip: text;
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+					color: transparent;
 				}
-				.lc-hero2 .lc-h-media:hover img {
-					transform: scale(1.04);
-					transition: transform 0.8s ease;
+				.hero-section .hero-counter .arrow-icon { filter: brightness(0) invert(1); opacity: 0.85; }
+				.hero-section .hero-counter-description { color: #bddff7; font-size: 0.95rem; }
+				.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.4rem; }
+				.hero-pills span {
+					padding: 7px 14px;
+					border-radius: 999px;
+					font-size: 0.78rem;
+					font-weight: 600;
+					color: #eaf5ff;
+					background: rgba(124, 196, 242, 0.14);
+					border: 1px solid rgba(124, 196, 242, 0.5);
 				}
-				.lc-hero2 .lc-h-side:hover img {
-					transform: translateY(-6px);
-					box-shadow: 0 24px 40px -22px rgba(2, 112, 204, 0.55);
+				.hero-button-inline .button-black:first-child {
+					background-color: #1870b0;
+					color: #fff;
+					box-shadow: 0 10px 24px -10px rgba(24, 112, 176, 0.8);
 				}
-				@keyframes lc-reveal {
-					from {
-						clip-path: inset(0 0 100% 0 round 20px);
-						opacity: 0;
-					}
-					to {
-						clip-path: inset(0 0 0 0 round 20px);
-						opacity: 1;
-					}
+				.hero-button-inline .button-black:first-child .button-left-icon { background-color: #fff; }
+				.hero-button-inline .button-black:first-child .button-hover { background-color: #152241; }
+				.hero-button-inline .button-black:last-child:not(:first-child) {
+					background-color: rgba(255, 255, 255, 0.7);
+					color: #152241;
+					border: 1px solid rgba(21, 34, 65, 0.25);
+					-webkit-backdrop-filter: blur(8px);
+					backdrop-filter: blur(8px);
 				}
-				@keyframes lc-zoom {
-					from {
-						transform: scale(1.18);
-					}
-					to {
-						transform: scale(1);
-					}
-				}
-				@keyframes lc-rise {
-					from {
-						opacity: 0;
-						transform: translateY(40px) scale(0.96);
-					}
-					to {
-						opacity: 1;
-						transform: none;
-					}
-				}
-				@media (prefers-reduced-motion: reduce) {
-					.lc-hero2 .lc-h-media,
-					.lc-hero2 .lc-h-media img,
-					.lc-hero2 .lc-h-side img {
-						animation: none;
-					}
-				}
-				.lc-hero2 .lc-w {
-					display: inline-block;
-					white-space: nowrap;
-				}
-				.lc-hero2 .lc-c {
-					display: inline-block;
-					opacity: 0;
-					transform: translateY(0.35em);
-					filter: blur(4px);
-					animation: lc-char 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-					animation-delay: calc(var(--d, 0s) + var(--i) * var(--step, 30ms));
-				}
-				@keyframes lc-char {
-					to {
-						opacity: 1;
-						transform: none;
-						filter: blur(0);
-					}
-				}
-				.lc-hero2 .lc-h-text {
-					animation: lc-fade 1.1s ease 1.3s both;
-				}
-				.lc-hero2 .lc-h-item span:last-child {
-					animation: lc-fade 0.9s ease both;
-				}
-				.lc-hero2 .lc-h-item:nth-child(1) span:last-child {
-					animation-delay: 2.4s;
-				}
-				.lc-hero2 .lc-h-item:nth-child(2) span:last-child {
-					animation-delay: 2.7s;
-				}
-				.lc-hero2 .lc-h-item:nth-child(3) span:last-child {
-					animation-delay: 3s;
-				}
-				@keyframes lc-fade {
-					from {
-						opacity: 0;
-					}
-					to {
-						opacity: 1;
-					}
-				}
-				@media (prefers-reduced-motion: reduce) {
-					.lc-hero2 .lc-h-text,
-					.lc-hero2 .lc-h-item span:last-child {
-						animation: none;
-					}
-				}
-				@media (prefers-reduced-motion: reduce) {
-					.lc-hero2 .lc-c {
-						animation: none;
-						opacity: 1;
-						transform: none;
-						filter: none;
-					}
-				}
-				@media (max-width: 991px) {
-					.lc-hero2 .lc-h-grid {
-						grid-template-columns: 1fr;
-						gap: 2rem;
-					}
-					.lc-hero2 .lc-h-media {
-						min-height: 380px;
-					}
-					.lc-hero2 {
-						padding: 2.5rem 0;
-					}
-					.lc-hero2 .lc-h-side img {
-						aspect-ratio: 16 / 10;
-					}
-				}
-				@media (max-width: 479px) {
-					.lc-hero2 {
-						padding: 1.5rem 0 3rem;
-					}
-					.lc-hero2 .lc-h-items {
-						grid-template-columns: 1fr;
-					}
-					.lc-hero2 .lc-h-item {
-						flex-direction: row;
-						align-items: center;
-					}
-					.lc-hero2 .lc-h-icon {
-						width: 30px;
-						height: 30px;
-					}
-				}
+				.hero-button-inline .button-black:last-child:not(:first-child):hover { color: #fff; }
 			</style>
 			<div class="container">
-				<div class="lc-h-grid">
-					<div class="lc-h-media">
-						<img
-							src="assets/Images/image_20260926_005347-make-same-as-this.webp"
-							alt="Lotus Catheter" />
-					</div>
-					<div class="lc-h-body">
-						<div>
-							<h1 class="lc-h-title">The <em>No Balloon</em> Urinary Catheter</h1>
-							<p class="lc-h-text">
-								The Lotus Catheter is the only urinary catheter with FDA clearance for
-								multiple uses of all the three urinary catheters in the medical field:
-								as a Foley Catheter, as a Malecot Catheter, and as a Straight Catheter.
-							</p>
+				<div class="w-layout-grid grid-hero">
+					<div class="hero-left">
+						<h1
+							data-w-id="c249eadf-f505-bb8b-6e6f-17095ff412a6"
+							style="
+								opacity: 1;
+								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+								transform-style: preserve-3d;
+							"
+							class="hero-title">
+							The <span class="hero-accent">No Balloon</span> Urinary Catheter
+						</h1>
+						<div
+							data-w-id="4e689e97-c15a-0d10-65c6-24c6fc0085f7"
+							style="
+								opacity: 1;
+								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+								transform-style: preserve-3d;
+							"
+							class="hero-button-inline">
+							<a
+								data-wf--button--variant="button-primary"
+								data-w-id="d102baf6-0bbf-4311-9c79-6b424f8fe8a7"
+								href="#about"
+								class="button-black w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9 w-inline-block">
+								<div
+									class="button-left-icon w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9"></div>
+								<div
+									class="button-hover w-variant-c0b5a063-5c21-c467-db20-27d93a4fd6e9"
+									style="
+										transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+											rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+										transform-style: preserve-3d;
+									"></div>
+								<div class="button-text">Learn More</div>
+							</a>
+					
 						</div>
-						<div class="lc-h-foot">
-							<div class="lc-h-badge">3 in 1</div>
-							<div class="mission-divider"></div>
-							<div class="lc-h-items">
-								<div class="lc-h-item">
-									<span
-										class="lc-h-icon"
-										style="
-											--icon-url: url(&quot;assets/Images/cath-foley.svg&quot;);
-										"></span
-									><span>Foley Catheter</span>
+					</div>
+					<div
+						id="w-node-bf3c9711-823b-f968-9fad-e3afe0ee1df3-1f421fd7"
+						class="hero-right">
+<div
+							data-w-id="46ecb230-4b90-fbc0-6dd1-86b926154e00"
+							style="
+								opacity: 1;
+								transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+									rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+								transform-style: preserve-3d;
+							"
+							class="w-layout-grid grid-hero-right">
+							<div class="hero-item-one">
+								<div class="hero-note"><span class="hero-icon-mask" style="--icon-url: url('assets/Images/hero.svg')"></span><p>The Lotus Catheter is the only urinary catheter with FDA clearance for multiple uses of all the three urinary catheters in the medical field: as a Foley Catheter, as a Malecot Catheter, and as a Straight Catheter</p></div>
+								<div class="hero-counter">
+									<img
+										src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/69008e3dae4d0c41b1cbd6ca_icon-03.svg"
+										loading="lazy"
+										alt="Icon"
+										class="arrow-icon"
+										style="rotate: 180deg" />
+									<div class="counter-count-wrap">
+										<h2
+											data-target="3"
+											class="counter-count">
+											3
+										</h2>
+										<h2 class="counter-count-number">in 1</h2>
+									</div>
 								</div>
-								<div class="lc-h-item">
-									<span
-										class="lc-h-icon"
-										style="
-											--icon-url: url(&quot;assets/Images/cath-malecot.svg&quot;);
-										"></span
-									><span>Malecot Catheter</span>
-								</div>
-								<div class="lc-h-item">
-									<span
-										class="lc-h-icon"
-										style="
-											--icon-url: url(&quot;assets/Images/cath-straight.svg&quot;);
-										"></span
-									><span>Straight Catheter</span>
-								</div>
+								<p class="hero-counter-description">
+									Simpler, Safer, and Superior in comparison to the Foley Catheter
+								</p>
+								<div class="hero-pills"><span>Foley Catheter</span><span>Malecot Catheter</span><span>Straight Catheter</span></div>
 							</div>
+						
 						</div>
-					</div>
-					<div class="lc-h-side">
-						<img
-							src="assets/Images/image_20260926_011650.webp"
-							alt="Lotus Catheter"
-							loading="lazy" />
 					</div>
 				</div>
 			</div>
-			<script>
-				(function () {
-					var root = document.querySelector(".lc-hero2");
-					if (!root) return;
-					var targets = [
-						[".lc-h-title", 0.2, 34],
-						[".lc-h-badge", 1.4, 70],
-					];
-					function split(el, delay, step) {
-						var n = 0;
-						el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
-						(function walk(node) {
-							Array.prototype.slice.call(node.childNodes).forEach(function (c) {
-								if (c.nodeType === 3) {
-									var frag = document.createDocumentFragment();
-									c.textContent.split(/(\s+)/).forEach(function (part) {
-										if (!part) return;
-										if (/^\s+$/.test(part)) {
-											frag.appendChild(document.createTextNode(" "));
-											return;
-										}
-										var w = document.createElement("span");
-										w.className = "lc-w";
-										w.setAttribute("aria-hidden", "true");
-										part.split("").forEach(function (ch) {
-											var sp = document.createElement("span");
-											sp.className = "lc-c";
-											sp.style.setProperty("--i", n++);
-											sp.textContent = ch;
-											w.appendChild(sp);
-										});
-										frag.appendChild(w);
-									});
-									node.replaceChild(frag, c);
-								} else if (c.nodeType === 1) {
-									walk(c);
-								}
-							});
-						})(el);
-						el.style.setProperty("--d", delay + "s");
-						el.style.setProperty("--step", step + "ms");
-					}
-					targets.forEach(function (t) {
-						root.querySelectorAll(t[0]).forEach(function (el) {
-							split(el, t[1], t[2]);
-						});
-					});
-				})();
-			</script>
+			<div
+				data-poster-url="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-poster-00001.jpg"
+				data-video-urls="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.mp4,https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.webm"
+				data-autoplay="true"
+				data-loop="true"
+				data-wf-ignore="true"
+				fetchpriority="high"
+				class="hero-bg-video w-background-video w-background-video-atom">
+				<video
+					id="ecf8b29e-8c2f-1cd5-e32d-eb62394dade1-video"
+					autoplay=""
+					loop=""
+					style="
+						background-image: url(&quot;https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-poster-00001.jpg&quot;);
+					"
+					muted=""
+					playsinline=""
+					data-wf-ignore="true"
+					data-object-fit="cover">
+					<source
+						src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.mp4"
+						data-wf-ignore="true" />
+					<source
+						src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-transcode.webm"
+						data-wf-ignore="true" /></video
+				><noscript
+					><style>
+						[data-wf-bgvideo-fallback-img] {
+							display: none;
+						}
+						@media (prefers-reduced-motion: reduce) {
+							[data-wf-bgvideo-fallback-img] {
+								position: absolute;
+								z-index: -100;
+								display: inline-block;
+								height: 100%;
+								width: 100%;
+								object-fit: cover;
+							}
+						}</style
+					><img
+						data-wf-bgvideo-fallback-img="true"
+						src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc%2F69118d5315a1498501bffc63_home1-bg-video-poster-00001.jpg"
+						alt=""
+				/></noscript>
+				<div aria-live="polite">
+					<button
+						type="button"
+						data-w-bg-video-control="true"
+						aria-controls="ecf8b29e-8c2f-1cd5-e32d-eb62394dade1-video"
+						class="w-backgroundvideo-backgroundvideoplaypausebutton play-pause-button w-background-video--control">
+						<span class="play-state"
+							><img
+								src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/690444958626847d40476e18_icon-22.svg"
+								loading="lazy"
+								fetchpriority="High"
+								alt="Pause video"
+								class="play-image" /></span
+						><span
+							hidden=""
+							class="pause-state"
+							><img
+								loading="lazy"
+								fetchpriority="High"
+								alt="Play video"
+								src="https://cdn.prod.website-files.com/69005cf82faa551a1f421ffc/69033410a92da385496a6282_icon-14.svg"
+								class="pause-image"
+						/></span>
+					</button>
+				</div>
+			</div>
 		</section>
 		<section class="our-mission-section section-spacing">
 			<div class="container-medium">
